@@ -237,24 +237,37 @@ document.addEventListener('DOMContentLoaded', () => {
   renderComments();
 
 
-  // --- 5. FORMULIR LAYANAN KONSULTASI KE LUCAS PARDEDE ---
+  // --- 5. FORMULIR LAYANAN KONSULTASI KE LUCAS PARDEDE (Bootstrap 5 Validation) ---
   const serviceForm = document.getElementById('contact-form');
   if (serviceForm) {
     serviceForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('nama')?.value.trim() || '';
-      const email = document.getElementById('email')?.value.trim() || '';
-      const phone = document.getElementById('telepon')?.value.trim() || '';
+
+      // Bootstrap 5 Native Constraint Validation Check
+      if (!serviceForm.checkValidity()) {
+        e.stopPropagation();
+        serviceForm.classList.add('was-validated');
+        showToast('Form Belum Lengkap ⚠️', 'Silakan lengkapi seluruh kolom yang bertanda bintang (*) sesuai format yang diminta.');
+        return;
+      }
+
+      serviceForm.classList.add('was-validated');
+
+      const name = (document.getElementById('floatingName') || document.getElementById('nama'))?.value.trim() || '';
+      const email = (document.getElementById('floatingEmail') || document.getElementById('email'))?.value.trim() || '';
+      const phone = (document.getElementById('floatingPhone') || document.getElementById('telepon'))?.value.trim() || '';
       const selectedService = document.querySelector('input[name="layanan"]:checked');
       const serviceText = selectedService ? selectedService.nextElementSibling.textContent.trim() : 'Konsultasi TI';
-      const topicEl = document.getElementById('topik');
+      const topicEl = document.getElementById('floatingCategory') || document.getElementById('topik');
       const topic = topicEl ? topicEl.options[topicEl.selectedIndex].text : '';
-      const message = document.getElementById('pesan')?.value.trim() || '';
+      const duration = document.getElementById('floatingDuration')?.value || '45';
+      const date = document.getElementById('floatingDate')?.value || '-';
+      const message = (document.getElementById('floatingMessage') || document.getElementById('pesan'))?.value.trim() || '';
 
-      showToast('Permohonan Terkirim! ✅', `Pengajuan konsultasi "${serviceText}" dari ${name} diterima. Menghubungkan ke WhatsApp Lucas...`);
+      showToast('Permohonan Terkirim! ✅', `Pengajuan konsultasi "${serviceText}" dari ${name} diterima. Membuka WhatsApp Lucas...`);
 
       const waText = encodeURIComponent(
-        `Halo Lucas Pardede!\n\nSaya ingin berkonsultasi mengenai:\n• Kategori: ${serviceText}\n• Pemohon: ${name}\n• Email: ${email}\n• WhatsApp: ${phone}\n• Topik Matkul: ${topic}\n• Detail Pertanyaan:\n"${message}"\n\nMohon konfirmasi ketersediaan waktunya. Terima kasih!`
+        `Halo Lucas Pardede!\n\nSaya ingin berkonsultasi mengenai:\n• Kategori: ${serviceText}\n• Pemohon: ${name}\n• Email: ${email}\n• WhatsApp: ${phone}\n• Topik Matkul: ${topic}\n• Durasi: ${duration} menit\n• Rencana Pertemuan: ${date}\n• Detail Pertanyaan:\n"${message}"\n\nMohon konfirmasi ketersediaan jadwalnya. Terima kasih!`
       );
 
       setTimeout(() => {
@@ -262,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1200);
 
       serviceForm.reset();
+      serviceForm.classList.remove('was-validated');
     });
   }
 
@@ -286,21 +300,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // --- 7. MOBILE NAVIGATION TOGGLE ---
-  const mobileToggle = document.getElementById('mobile-toggle');
-  const siteNav = document.getElementById('site-nav');
-  const navLinks = document.querySelectorAll('.nav-link');
+  // --- 7. MOBILE NAVIGATION & BOOTSTRAP COLLAPSE INTEGRATION ---
+  const navbarContent = document.getElementById('navbarContent');
+  const navLinks = document.querySelectorAll('.nav-link, .lab-badge-nav, .nav-cta-btn');
 
-  if (mobileToggle && siteNav) {
-    mobileToggle.addEventListener('click', () => {
-      const isOpen = siteNav.classList.toggle('open');
-      mobileToggle.setAttribute('aria-expanded', isOpen.toString());
-    });
-
+  if (navbarContent) {
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        siteNav.classList.remove('open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
+        if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+          const bsCollapse = bootstrap.Collapse.getInstance(navbarContent);
+          if (bsCollapse && navbarContent.classList.contains('show')) {
+            bsCollapse.hide();
+          }
+        }
       });
     });
   }
@@ -487,11 +499,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- 14. KEYBOARD ACCESSIBILITY: ESCAPE CLOSES MOBILE NAV ---
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && siteNav && siteNav.classList.contains('open')) {
-      siteNav.classList.remove('open');
-      if (mobileToggle) {
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileToggle.focus();
+    if (e.key === 'Escape') {
+      const navbarCollapse = document.getElementById('navbarContent');
+      if (navbarCollapse && typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse && navbarCollapse.classList.contains('show')) {
+          bsCollapse.hide();
+        }
       }
     }
   });
