@@ -1780,7 +1780,7 @@
                 </fieldset>
 
                 <!-- Tombol Submit Form Layanan Berstandar Bootstrap 5 -->
-                <button type="submit" class="btn-submit-service-bs" id="btn-submit-form">
+                <button type="button" class="btn-submit-service-bs" id="btn-submit-form">
                   <span>Kirim Pengajuan Konsultasi ke Lucas</span>
                   <i class="bi bi-send-fill"></i>
                 </button>
@@ -1936,7 +1936,7 @@
               <div class="gb-header">
                 <div class="gb-title-meta">
                   <h3>Guestbook &amp; Umpan Balik</h3>
-                  <p class="card-hint">Tinggalkan apresiasi, saran, atau komentar Anda secara langsung.</p>
+                  <p class="card-hint">Contoh apresiasi dan komentar ditampilkan secara statis.</p>
                 </div>
                 <span class="comments-counter-badge" id="comments-count">3 Komentar</span>
               </div>
@@ -1963,7 +1963,7 @@
                     </div>
                   </div>
 
-                  <button type="submit" class="btn-post-comment">
+                  <button type="button" class="btn-post-comment">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
                     <span>Kirim Komentar</span>
                   </button>
@@ -1972,11 +1972,40 @@
 
               <!-- Live Comments Stream Container -->
               <div class="comments-stream-container custom-scroll" id="comments-stream">
-                <!-- Komentar akan dimuat secara dinamis oleh JavaScript -->
+                <div class="comment-card">
+                  <div class="c-avatar">👨‍🏫</div>
+                  <div class="c-body">
+                    <div class="c-top">
+                      <span class="c-author">Humasak Tommy Argo Simanjuntak, ST, M.ISD</span>
+                      <span class="c-time">18 Sep 2026, 14:20</span>
+                    </div>
+                    <p class="c-text">Portofolio yang sangat komprehensif dan mencerminkan kapabilitas mahasiswa Sistem Informasi IT Del. Dedikasi sebagai Asdos Basis Data &amp; Matematika Diskrit serta keaktifan di BEM dan Pojok Statistik terlihat jelas. Terus pertahankan prestasi, Lucas!</p>
+                  </div>
+                </div>
+                <div class="comment-card">
+                  <div class="c-avatar">👨‍💻</div>
+                  <div class="c-body">
+                    <div class="c-top">
+                      <span class="c-author">Andi Siregar (13SI1 - IT Del)</span>
+                      <span class="c-time">19 Sep 2026, 09:15</span>
+                    </div>
+                    <p class="c-text">Keren kali bro web porto terbarunya! Mockup proyek DelEats dan sistem DelLib kelihatan professional banget. Sukses bareng sebagai asdos dan di semester 5 ini! 🔥</p>
+                  </div>
+                </div>
+                <div class="comment-card">
+                  <div class="c-avatar">👩‍🎓</div>
+                  <div class="c-body">
+                    <div class="c-top">
+                      <span class="c-author">Dosen Pengampu Praktikum PPW (12S3101)</span>
+                      <span class="c-time">20 Sep 2026, 08:30</span>
+                    </div>
+                    <p class="c-text">Implementasi semantik HTML5, tabel KHS, formulir interaktif aksesibel, dan integrasi WhatsApp telah memenuhi seluruh kriteria modul praktikum minggu 02 dengan sangat baik. Finalisasi desain glassmorphism juga sangat impresif.</p>
+                  </div>
+                </div>
               </div>
 
               <div class="gb-disclaimer">
-                <span>💬 Komentar Anda langsung tampil dan tersimpan secara lokal pada browser.</span>
+                <span>💬 Komentar yang ditampilkan di halaman ini bersifat statis.</span>
               </div>
             </div>
           </div>
@@ -2401,10 +2430,5 @@
     </div>
   </div>
 
-  <!-- Bootstrap 5.3.3 JS Bundle CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-  <!-- Script Logika Interaktif Portofolio -->
-  <script src="script.js"></script>
 </body>
 </html>
