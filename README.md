@@ -12,6 +12,8 @@
 **Cabang Pengerjaan (Branch):** `week3-bootstrap`  
 **Tautan Live Demo GitHub Pages:** [https://lucaspardede.github.io/ppw-2026-week2-12S24015/](https://lucaspardede.github.io/ppw-2026-week2-12S24015/)  
 
+> Catatan: versi ini menggunakan HTML dan CSS statis tanpa JavaScript. Tampilan dan konten utama dipertahankan; kontrol interaktif seperti menu hamburger, tab, modal, dan pengiriman formulir tidak menjalankan aksi.
+
 ---
 
 ## 1. Ringkasan Proyek &amp; Pembaruan Minggu 03 (Week 3 Refactoring)
@@ -60,7 +62,7 @@ Berikut adalah representasi visual dan struktur antarmuka hasil modernisasi port
 |  [ WhatsApp: 085932521713 ]   [ Ajukan Konsultasi ]   [ Riwayat Transkrip KHS ]   |
 +-----------------------------------------------------------------------------------+
 ```
-*Tampilan mobile (<768px): Navbar otomatis melipat menjadi hamburger button (`.navbar-toggler`), saat diklik menu terbuka secara vertikal dan otomatis menutup ketika salah satu anchor link dipilih.*
+*Tampilan mobile (<768px): Navbar memakai tombol hamburger sebagai elemen visual; menu tidak dapat dibuka tanpa JavaScript.*
 
 ### B. Responsive Grid Portofolio (12-Kolom: `row-cols-1 row-cols-md-2 row-cols-lg-3 g-4`)
 ```text
@@ -111,7 +113,7 @@ Berikut adalah representasi visual dan struktur antarmuka hasil modernisasi port
 ## 4. Pemenuhan Rubrik Penilaian Modul 03 (Checklist 100%)
 
 ### ✅ 1. Fondasi Framework &amp; Semantik (Bobot 15%)
-- [x] **Bootstrap 5.3 CDN**: Memuat `bootstrap.min.css` (v5.3.3) dan bundle `bootstrap.bundle.min.js` via jsDelivr CDN resmi.
+- [x] **Bootstrap 5.3 CSS CDN**: Memuat `bootstrap.min.css` (v5.3.3) via jsDelivr CDN resmi, tanpa bundle JavaScript.
 - [x] **Bootstrap Icons**: Memuat paket ikon `bootstrap-icons.min.css` (v1.11.3) untuk seluruh elemen navigasi, kartu, modal, dan formulir.
 - [x] **Struktur Semantik HTML5**: Dokumen mempertahankan tag `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, dan `<footer>`.
 - [x] **Viewport Meta Responsif**: Terpasang `<meta name="viewport" content="width=device-width, initial-scale=1.0">`.
@@ -120,9 +122,8 @@ Berikut adalah representasi visual dan struktur antarmuka hasil modernisasi port
 ### ✅ 2. Responsive Navbar &amp; Hero Section (Bobot 20%)
 - [x] **Navbar Sticky-Top**: Menggunakan kelas `navbar navbar-expand-lg navbar-dark navbar-custom sticky-top`.
 - [x] **Brand Identity**: Memuat avatar resmi Lucas Pardede, tipografi nama, sub-teks program studi IT Del, serta indikator status asdos.
-- [x] **Hamburger Collapse Responsif**: Tombol `.navbar-toggler` berfungsi membuka dan menutup navigasi menu di layar ponsel tanpa error console JavaScript.
-- [x] **Auto-close Nav Link**: Navigasi mobile otomatis melipat saat salah satu tautan seksi diklik.
-- [x] **Hero Section Proporsional**: Dilengkapi call-to-action (CTA) tombol WhatsApp dinamis, riwayat transkrip, formulir konsultasi, dan dynamic role typewriter.
+- [x] **Navbar**: Tampilan navbar dipertahankan; menu hamburger tidak interaktif tanpa JavaScript.
+- [x] **Hero Section Proporsional**: Dilengkapi call-to-action (CTA) WhatsApp, riwayat transkrip, dan teks peran statis.
 
 ### ✅ 3. Grid Portofolio &amp; Modal Dialog (Bobot 20%)
 - [x] **Sistem Grid 12-Kolom**: Mengimplementasikan grid resmi Bootstrap 5:  
@@ -135,7 +136,7 @@ Berikut adalah representasi visual dan struktur antarmuka hasil modernisasi port
   5. *SecureAudit* — Automated Web Security &amp; Vulnerability Scanner
   6. *Lucas Portfolio 3.0* — Portofolio Refactoring Bootstrap 5 &amp; Advanced CSS
 - [x] **Anatomi Kartu Lengkap**: Setiap kartu memuat header meta, banner visual mockup, judul, ringkasan, badge instrumen teknologi, tombol pemicu modal, dan tombol repositori.
-- [x] **Modal Dialog Interaktif (.modal)**: Disediakan 6 modal dialog lengkap dengan konten berbeda, diagram stack, metrik capaian proyek, dan tombol dismiss.
+- [x] **Konten Detail Proyek**: Disediakan 6 modal dialog sebagai markup statis; pemicu modal tidak interaktif tanpa JavaScript.
 
 ### ✅ 4. Modernisasi Formulir Layanan (Bobot 15%)
 - [x] **Floating Labels (`.form-floating`)**: Diterapkan pada input Nama Lengkap, Alamat Email Resmi, Kategori Topik Mata Kuliah, Durasi Konsultasi, Tanggal Sesi, dan Uraian Pertanyaan.
@@ -175,7 +176,6 @@ ppw-2026-week2-12S24015/
 ├── index.html              # Halaman utama portofolio terintegrasi Bootstrap 5.3 & semantik HTML5
 ├── custom-style.css        # Berkas overrides CSS kustom (CSS Variables, cards, modals, zero !important)
 ├── style.css               # Berkas CSS styling pendukung portofolio lengkap
-├── script.js               # Skrip interaktif (Bootstrap validation, collapse handling, tabs, guestbook)
 ├── 1789810572646.jpg       # Foto profil resmi mahasiswa Lucas Pardede (IT Del)
 └── README.md               # Dokumentasi resmi pembaruan Minggu 03 & tabel komparasi sebelum vs sesudah
 ```
@@ -194,11 +194,10 @@ ppw-2026-week2-12S24015/
    ```
    Lalu buka peramban pada alamat `http://localhost:8000/index.html`.
 
-### 2. Menguji Fitur Interaktif Modul 03
-- **Navbar Hamburger**: Ubah ukuran jendela peramban ke mode mobile (<768px). Klik tombol hamburger untuk melihat menu navigasi muncul dan tertutup secara mulus tanpa error console.
-- **Kartu Proyek &amp; Grid**: Perhatikan penataan otomatis kartu proyek dalam layout 3 kolom di desktop dan 1 kolom di ponsel (`row-cols-1 row-cols-md-2 row-cols-lg-3 g-4`). Arahkan kursor pada kartu untuk melihat animasi garis aksen `::before` dan efek *shadow lift*.
-- **Modal Dialog Detail**: Klik tombol **Detail Proyek** pada setiap kartu proyek (tersedia 6 modal dengan konten arsitektur, diagram stack, dan metrik berbeda) untuk memunculkan pop-up modal Bootstrap.
-- **Validasi Visual Formulir**: Gulir ke bagian formulir *Layanan &amp; Kontak*. Coba langsung klik tombol *Kirim Pengajuan Konsultasi ke Lucas* tanpa mengisi formulir. Perhatikan bahwa browser memicu pesan validasi merah (`.invalid-feedback`). Isi formulir dengan data valid untuk melihat centang hijau (`.valid-feedback`).
+### 2. Memeriksa Tampilan Statis
+- Buka halaman pada desktop dan mobile untuk memeriksa layout responsif, teks, gambar, tabel, dan kartu.
+- Guestbook menampilkan tiga komentar statis. Formulir, tombol hamburger, tab, dan modal hanya mempertahankan tampilan; semuanya tidak menjalankan aksi.
+- Grid kartu proyek dan efek hover tetap ditangani oleh CSS.
 
 ---
 
