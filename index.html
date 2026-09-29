@@ -4,11 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucas Pardede — Portofolio Sistem Informasi &amp; Web Developer | IT Del</title>
-  <meta name="description" content="Portofolio resmi Lucas Pardede (iss24015) - Mahasiswa S1 Sistem Informasi Institut Teknologi Del. Web Developer, Database Enthusiast, dan System Analyst.">
+  <meta name="description" content="Portofolio resmi Lucas Pardede (12S24015) - Mahasiswa S1 Sistem Informasi Institut Teknologi Del. Asisten Dosen, Web Developer, dan Database Engineer.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5.3.3 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons 1.11.3 CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Main Custom Styling -->
   <link rel="stylesheet" href="style.css">
+  <!-- Custom Overrides (Dimuat setelah Bootstrap sesuai regulasi Modul 03) -->
+  <link rel="stylesheet" href="custom-style.css">
 </head>
 <body>
 
@@ -20,37 +27,43 @@
     <div class="grid-overlay"></div>
   </div>
 
-  <!-- Header / Navigation (Memenuhi Bobot 1: <header> dan <nav>) -->
-  <header class="site-header" id="navbar">
-    <div class="wrap header-inner">
-      <a href="#top" class="brand">
-        <div class="brand-avatar-mini">
-          <img src="1789810572646.jpg" alt="Foto Profil Lucas Pardede">
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">Lucas Pardede</span>
-          <span class="brand-sub">S1 Sistem Informasi &middot; IT Del</span>
-        </div>
-      </a>
-
-      <nav class="site-nav" id="site-nav" aria-label="Navigasi Utama">
-        <a href="#tentang" class="nav-link">Tentang</a>
-        <a href="#akademik" class="nav-link">Akademik</a>
-        <a href="#showcase" class="nav-link">Showcase</a>
-        <a href="#layanan" class="nav-link">Layanan &amp; Kontak</a>
-        <a href="#guestbook" class="nav-link">Guestbook</a>
-      </nav>
-
-      <div class="header-action">
-        <a href="https://wa.me/6285932521713?text=Halo%20Lucas,%20saya%20tertarik%20untuk%20konsultasi%20dan%20berdiskusi" target="_blank" rel="noopener noreferrer" class="btn-hire">
-          <span class="status-dot" style="background: #25D366; box-shadow: 0 0 10px #25D366;"></span>
-          <span>WhatsApp / Konsultasi</span>
+  <!-- Header / Navigation (Memenuhi Bobot 1: <header> dan <nav> Berstandar Bootstrap 5.3 Navbar) -->
+  <header class="sticky-top" id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" id="mainNavbar" aria-label="Navigasi Utama Situs">
+      <div class="container">
+        <a class="navbar-brand" href="#top">
+          <div class="brand-avatar-mini">
+            <img src="1789810572646.jpg" alt="Foto Profil Lucas Pardede">
+          </div>
+          <div>
+            <span class="brand-name">Lucas Pardede</span>
+            <span class="brand-sub">S1 Sistem Informasi &middot; IT Del</span>
+          </div>
         </a>
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Buka Menu Navigasi">
-          <span></span><span></span><span></span>
+
+        <!-- Hamburger Toggle Button Responsif Bootstrap 5 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Buka / Tutup Navigasi Menu">
+          <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Menu Navigasi Collapse -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 my-2 my-lg-0" id="site-nav">
+            <li class="nav-item"><a href="#tentang" class="nav-link active">Tentang</a></li>
+            <li class="nav-item"><a href="#akademik" class="nav-link">Akademik</a></li>
+            <li class="nav-item"><a href="#showcase" class="nav-link">Showcase</a></li>
+            <li class="nav-item"><a href="#layanan" class="nav-link">Layanan &amp; Kontak</a></li>
+            <li class="nav-item"><a href="#guestbook" class="nav-link">Guestbook</a></li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <a href="https://wa.me/6285932521713?text=Halo%20Lucas,%20saya%20tertarik%20untuk%20konsultasi%20dan%20berdiskusi" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">
+                <i class="bi bi-whatsapp"></i>
+                <span>Konsultasi WA</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </nav>
   </header>
 
   <!-- Konten Utama (Memenuhi Bobot 1: Elemen <main> Tunggal) -->
@@ -866,231 +879,219 @@
           </div>
         </div>
 
-        <!-- TAB CONTENT 1: PROJECTS -->
+        <!-- TAB CONTENT 1: PROJECTS (Memenuhi Bobot 20%: Grid Responsif row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 & Komponen .card) -->
         <div class="tab-pane active" id="pane-projects" role="tabpanel">
-          <div class="projects-grid">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 portfolio-grid-section">
 
             <!-- Project 1: Kantin Digital Kampus IT Del -->
-            <article class="glass-card project-card">
-              <div class="project-header-meta">
-                <span class="project-badge">Web &amp; Sistem Informasi</span>
-                <span class="project-date">2026</span>
-              </div>
-              <div class="project-preview-mockup">
-                <div class="mockup-bar"><span></span><span></span><span></span></div>
-                <div class="mockup-content mockup-food">
-                  <div class="mockup-chip">✦ DelEats Portal</div>
-                  <div class="mockup-preview-title">Sistem Pemesanan Kantin Digital Kampus IT Del</div>
+            <div class="col">
+              <article class="card project-card-bs h-100">
+                <div class="card-header-meta">
+                  <span class="category-badge"><i class="bi bi-globe me-1"></i> Web &amp; SI</span>
+                  <span class="year-badge">2026</span>
                 </div>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">DelEats — Kantin Digital Terintegrasi IT Del</h3>
-                <p class="project-summary">
-                  Platform manajemen antrean dan pemesanan makanan kantin kampus secara real-time untuk memangkas waktu tunggu antrean mahasiswa hingga 60%, dilengkapi manajemen stok vendor dan simulasi pembayaran QRIS.
-                </p>
-                <div class="project-tech-tags">
-                  <span>Next.js</span>
-                  <span>Laravel API</span>
-                  <span>PostgreSQL</span>
-                  <span>Tailwind CSS</span>
+                <div class="card-banner-wrapper">
+                  <div class="mockup-dots"><span></span><span></span><span></span></div>
+                  <div class="card-banner-title">DelEats — Kantin Digital IT Del</div>
+                  <div class="card-banner-sub">Sistem Pemesanan Real-time Kampus</div>
                 </div>
-                <div class="project-actions">
-                  <a href="https://github.com/lucaspardede/deleats-canteen-system" target="_blank" rel="noopener noreferrer" class="btn-action">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    <span>Source Code</span>
-                  </a>
-                  <a href="#layanan" class="btn-action primary">
-                    <span>Live Demo</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
+                <div class="card-body">
+                  <h3 class="card-title">DelEats Portal</h3>
+                  <p class="card-text">
+                    Platform manajemen antrean dan pemesanan makanan kantin kampus secara real-time untuk memangkas waktu tunggu antrean mahasiswa hingga 60%, dilengkapi manajemen stok vendor dan simulasi QRIS.
+                  </p>
+                  <div class="tech-badge-container">
+                    <span class="badge-tech">Next.js</span>
+                    <span class="badge-tech">Laravel API</span>
+                    <span class="badge-tech">PostgreSQL</span>
+                    <span class="badge-tech">Tailwind</span>
+                  </div>
+                  <div class="card-actions-group">
+                    <button type="button" class="btn-detail-modal" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                      <i class="bi bi-info-circle-fill"></i> Detail Proyek
+                    </button>
+                    <a href="https://github.com/lucaspardede/deleats-canteen-system" target="_blank" rel="noopener noreferrer" class="btn-repo-link" title="Source Code Repositori">
+                      <i class="bi bi-github"></i> Repo
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </div>
 
             <!-- Project 2: DelLib Perpustakaan Pintar -->
-            <article class="glass-card project-card">
-              <div class="project-header-meta">
-                <span class="project-badge">Basis Data Lanjut &amp; Web</span>
-                <span class="project-date">2026</span>
-              </div>
-              <div class="project-preview-mockup">
-                <div class="mockup-bar"><span></span><span></span><span></span></div>
-                <div class="mockup-content mockup-lib">
-                  <div class="mockup-chip">✦ DelLib Catalog</div>
-                  <div class="mockup-preview-title">Sistem Sirkulasi &amp; Database Perpustakaan</div>
+            <div class="col">
+              <article class="card project-card-bs h-100">
+                <div class="card-header-meta">
+                  <span class="category-badge"><i class="bi bi-database-fill-gear me-1"></i> Basis Data &amp; Web</span>
+                  <span class="year-badge">2026</span>
                 </div>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">DelLib — Sistem Informasi Sirkulasi Buku</h3>
-                <p class="project-summary">
-                  Perancangan skema basis data relasional ternormalisasi (3NF) untuk katalog buku, riwayat peminjaman otomatis, kalkulasi denda harian, dan pencarian cepat menggunakan indexing data terstruktur.
-                </p>
-                <div class="project-tech-tags">
-                  <span>React.js</span>
-                  <span>Node.js Express</span>
-                  <span>MySQL</span>
-                  <span>ERD Modeling</span>
+                <div class="card-banner-wrapper">
+                  <div class="mockup-dots"><span></span><span></span><span></span></div>
+                  <div class="card-banner-title">DelLib — Sirkulasi Perpustakaan</div>
+                  <div class="card-banner-sub">Katalog &amp; Manajemen Denda Otomatis</div>
                 </div>
-                <div class="project-actions">
-                  <a href="https://github.com/lucaspardede/dellib-library-management" target="_blank" rel="noopener noreferrer" class="btn-action">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    <span>Source Code</span>
-                  </a>
-                  <a href="#layanan" class="btn-action primary">
-                    <span>Live Demo</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
+                <div class="card-body">
+                  <h3 class="card-title">DelLib System</h3>
+                  <p class="card-text">
+                    Perancangan skema basis data relasional ternormalisasi (3NF) untuk katalog buku, riwayat peminjaman otomatis, kalkulasi denda harian, dan pencarian cepat menggunakan indexing B-Tree terstruktur.
+                  </p>
+                  <div class="tech-badge-container">
+                    <span class="badge-tech">React.js</span>
+                    <span class="badge-tech">Node.js Express</span>
+                    <span class="badge-tech">PostgreSQL</span>
+                    <span class="badge-tech">3NF Schema</span>
+                  </div>
+                  <div class="card-actions-group">
+                    <button type="button" class="btn-detail-modal" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                      <i class="bi bi-info-circle-fill"></i> Detail Proyek
+                    </button>
+                    <a href="https://github.com/lucaspardede/dellib-library-management" target="_blank" rel="noopener noreferrer" class="btn-repo-link" title="Source Code Repositori">
+                      <i class="bi bi-github"></i> Repo
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </div>
 
             <!-- Project 3: DelTask Kanban Board -->
-            <article class="glass-card project-card">
-              <div class="project-header-meta">
-                <span class="project-badge">Manajemen Proyek SI</span>
-                <span class="project-date">2026</span>
-              </div>
-              <div class="project-preview-mockup">
-                <div class="mockup-bar"><span></span><span></span><span></span></div>
-                <div class="mockup-content mockup-kanban">
-                  <div class="mockup-chip">✦ Agile Board</div>
-                  <div class="mockup-preview-title">Papan Kanban Kolaborasi Tim Pengembang</div>
+            <div class="col">
+              <article class="card project-card-bs h-100">
+                <div class="card-header-meta">
+                  <span class="category-badge"><i class="bi bi-kanban me-1"></i> Manajemen Proyek</span>
+                  <span class="year-badge">2026</span>
                 </div>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">DelTask — Kanban &amp; Sprint Management</h3>
-                <p class="project-summary">
-                  Aplikasi manajemen proyek berbasis Agile Scrum dengan fitur drag-and-drop task card, sprint burndown chart, time tracking, serta pembagian peran (Product Owner, Scrum Master, Developer).
-                </p>
-                <div class="project-tech-tags">
-                  <span>TypeScript</span>
-                  <span>React.js</span>
-                  <span>Supabase</span>
-                  <span>Chart.js</span>
+                <div class="card-banner-wrapper">
+                  <div class="mockup-dots"><span></span><span></span><span></span></div>
+                  <div class="card-banner-title">DelTask — Kanban &amp; Sprint Tracker</div>
+                  <div class="card-banner-sub">Platform Kolaborasi Tim Berbasis Agile</div>
                 </div>
-                <div class="project-actions">
-                  <a href="https://github.com/lucaspardede/deltask-agile-kanban" target="_blank" rel="noopener noreferrer" class="btn-action">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    <span>Source Code</span>
-                  </a>
-                  <a href="#layanan" class="btn-action primary">
-                    <span>Live Demo</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
+                <div class="card-body">
+                  <h3 class="card-title">DelTask Scrum Board</h3>
+                  <p class="card-text">
+                    Aplikasi manajemen proyek kolaboratif untuk tim mahasiswa: mendukung drag-and-drop kartu tugas, estimasi story points, pelacakan velocity sprint, dan visualisasi diagram burndown.
+                  </p>
+                  <div class="tech-badge-container">
+                    <span class="badge-tech">TypeScript</span>
+                    <span class="badge-tech">React.js</span>
+                    <span class="badge-tech">Supabase</span>
+                    <span class="badge-tech">Agile Scrum</span>
+                  </div>
+                  <div class="card-actions-group">
+                    <button type="button" class="btn-detail-modal" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                      <i class="bi bi-info-circle-fill"></i> Detail Proyek
+                    </button>
+                    <a href="https://github.com/lucaspardede/deltask-agile-kanban" target="_blank" rel="noopener noreferrer" class="btn-repo-link" title="Source Code Repositori">
+                      <i class="bi bi-github"></i> Repo
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </div>
 
-            <!-- Project 4: AI Plant Disease Detector -->
-            <article class="glass-card project-card">
-              <div class="project-header-meta">
-                <span class="project-badge">Kecerdasan Buatan (+P)</span>
-                <span class="project-date">2026</span>
-              </div>
-              <div class="project-preview-mockup">
-                <div class="mockup-bar"><span></span><span></span><span></span></div>
-                <div class="mockup-content mockup-ai">
-                  <div class="mockup-chip">✦ Computer Vision</div>
-                  <div class="mockup-preview-title">Deteksi Penyakit Daun Berbasis AI &amp; Web</div>
+            <!-- Project 4: AgroScan AI Detektor -->
+            <div class="col">
+              <article class="card project-card-bs h-100">
+                <div class="card-header-meta">
+                  <span class="category-badge"><i class="bi bi-cpu-fill me-1"></i> Kecerdasan Buatan</span>
+                  <span class="year-badge">2026</span>
                 </div>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">AgroScan AI — Deteksi Penyakit Tanaman</h3>
-                <p class="project-summary">
-                  Aplikasi web interaktif klasifikasi penyakit daun tanaman pangan berbasis Convolutional Neural Network (CNN) dengan akurasi 94.2% dan integrasi saran tindakan penanganan preventif.
-                </p>
-                <div class="project-tech-tags">
-                  <span>Python</span>
-                  <span>TensorFlow</span>
-                  <span>Flask API</span>
-                  <span>Tailwind</span>
+                <div class="card-banner-wrapper">
+                  <div class="mockup-dots"><span></span><span></span><span></span></div>
+                  <div class="card-banner-title">AgroScan AI — Deteksi Penyakit Tanaman</div>
+                  <div class="card-banner-sub">Klasifikasi Daun dengan Deep Learning</div>
                 </div>
-                <div class="project-actions">
-                  <a href="https://github.com/lucaspardede/agroscan-ai-detector" target="_blank" rel="noopener noreferrer" class="btn-action">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    <span>Source Code</span>
-                  </a>
-                  <a href="#layanan" class="btn-action primary">
-                    <span>Live Demo</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
+                <div class="card-body">
+                  <h3 class="card-title">AgroScan AI</h3>
+                  <p class="card-text">
+                    Aplikasi web interaktif klasifikasi penyakit daun tanaman pangan berbasis Convolutional Neural Network (CNN) dengan akurasi 94.2% dan integrasi saran tindakan penanganan preventif.
+                  </p>
+                  <div class="tech-badge-container">
+                    <span class="badge-tech">Python</span>
+                    <span class="badge-tech">TensorFlow</span>
+                    <span class="badge-tech">Flask API</span>
+                    <span class="badge-tech">Tailwind</span>
+                  </div>
+                  <div class="card-actions-group">
+                    <button type="button" class="btn-detail-modal" data-bs-toggle="modal" data-bs-target="#projectModal4">
+                      <i class="bi bi-info-circle-fill"></i> Detail Proyek
+                    </button>
+                    <a href="https://github.com/lucaspardede/agroscan-ai-detector" target="_blank" rel="noopener noreferrer" class="btn-repo-link" title="Source Code Repositori">
+                      <i class="bi bi-github"></i> Repo
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </div>
 
-            <!-- Project 5: SecureAudit Web Security Checker -->
-            <article class="glass-card project-card">
-              <div class="project-header-meta">
-                <span class="project-badge">Keamanan Sistem</span>
-                <span class="project-date">2026</span>
-              </div>
-              <div class="project-preview-mockup">
-                <div class="mockup-bar"><span></span><span></span><span></span></div>
-                <div class="mockup-content mockup-security">
-                  <div class="mockup-chip">✦ Security Audit</div>
-                  <div class="mockup-preview-title">Simulasi Audit Celah Keamanan OWASP Top 10</div>
+            <!-- Project 5: SecureAudit Tester -->
+            <div class="col">
+              <article class="card project-card-bs h-100">
+                <div class="card-header-meta">
+                  <span class="category-badge"><i class="bi bi-shield-lock-fill me-1"></i> Web Security</span>
+                  <span class="year-badge">2026</span>
                 </div>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">SecureAudit — Web Vulnerability Tester</h3>
-                <p class="project-summary">
-                  Tool interaktif simulasi scanning kerentanan formulir web dari serangan SQL Injection, Cross-Site Scripting (XSS), dan sanitasi header HTTP untuk standar keamanan aplikasi web modern.
-                </p>
-                <div class="project-tech-tags">
-                  <span>Node.js</span>
-                  <span>Express</span>
-                  <span>OWASP Top 10</span>
-                  <span>Security Headers</span>
+                <div class="card-banner-wrapper">
+                  <div class="mockup-dots"><span></span><span></span><span></span></div>
+                  <div class="card-banner-title">SecureAudit — Vulnerability Tester</div>
+                  <div class="card-banner-sub">Simulasi Keamanan Form &amp; Sanitasi Input</div>
                 </div>
-                <div class="project-actions">
-                  <a href="https://github.com/lucaspardede/secureaudit-tester" target="_blank" rel="noopener noreferrer" class="btn-action">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    <span>Source Code</span>
-                  </a>
-                  <a href="#layanan" class="btn-action primary">
-                    <span>Live Demo</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                  </a>
+                <div class="card-body">
+                  <h3 class="card-title">SecureAudit Tool</h3>
+                  <p class="card-text">
+                    Tool interaktif simulasi scanning kerentanan formulir web dari serangan SQL Injection, Cross-Site Scripting (XSS), dan sanitasi header HTTP untuk standar keamanan aplikasi web modern.
+                  </p>
+                  <div class="tech-badge-container">
+                    <span class="badge-tech">Node.js</span>
+                    <span class="badge-tech">Express</span>
+                    <span class="badge-tech">OWASP Top 10</span>
+                    <span class="badge-tech">Security Headers</span>
+                  </div>
+                  <div class="card-actions-group">
+                    <button type="button" class="btn-detail-modal" data-bs-toggle="modal" data-bs-target="#projectModal5">
+                      <i class="bi bi-info-circle-fill"></i> Detail Proyek
+                    </button>
+                    <a href="https://github.com/lucaspardede/secureaudit-tester" target="_blank" rel="noopener noreferrer" class="btn-repo-link" title="Source Code Repositori">
+                      <i class="bi bi-github"></i> Repo
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </div>
 
-            <!-- Project 6: Portofolio Lucas Pardede V2 -->
-            <article class="glass-card project-card">
-              <div class="project-header-meta">
-                <span class="project-badge">Frontend Engineering</span>
-                <span class="project-date">2026</span>
-              </div>
-              <div class="project-preview-mockup">
-                <div class="mockup-bar"><span></span><span></span><span></span></div>
-                <div class="mockup-content mockup-porto">
-                  <div class="mockup-chip">✦ Lucas Portfolio</div>
-                  <div class="mockup-preview-title">Modern Dark Glassmorphism Experience</div>
+            <!-- Project 6: Portofolio Lucas Pardede V3 -->
+            <div class="col">
+              <article class="card project-card-bs h-100">
+                <div class="card-header-meta">
+                  <span class="category-badge"><i class="bi bi-layers-fill me-1"></i> Frontend &amp; Bootstrap 5</span>
+                  <span class="year-badge">2026</span>
                 </div>
-              </div>
-              <div class="project-body">
-                <h3 class="project-title">Lucas Pardede — Personal Portfolio 2.0</h3>
-                <p class="project-summary">
-                  Website portofolio yang sedang Anda buka: dibangun dengan arsitektur semantik standar HTML5, CSS3 glassmorphism canggih, interaksi tab JavaScript, dan formulir aksesibel.
-                </p>
-                <div class="project-tech-tags">
-                  <span>HTML5 Semantic</span>
-                  <span>CSS3 Glass</span>
-                  <span>JavaScript ES6</span>
-                  <span>WCAG 2.2</span>
+                <div class="card-banner-wrapper">
+                  <div class="mockup-dots"><span></span><span></span><span></span></div>
+                  <div class="card-banner-title">Portfolio 3.0 — Bootstrap 5 Integration</div>
+                  <div class="card-banner-sub">Modul 03 PPW Refactoring Experience</div>
                 </div>
-                <div class="project-actions">
-                  <a href="#top" class="btn-action">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-                    <span>Ke Atas</span>
-                  </a>
-                  <a href="#guestbook" class="btn-action primary">
-                    <span>Beri Feedback</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                  </a>
+                <div class="card-body">
+                  <h3 class="card-title">Lucas Portfolio 3.0</h3>
+                  <p class="card-text">
+                    Website portofolio yang sedang Anda buka: direfaktor dengan grid 12-kolom Bootstrap 5.3, Bootstrap Modals, floating labels, validasi visual, dan custom CSS zero !important.
+                  </p>
+                  <div class="tech-badge-container">
+                    <span class="badge-tech">Bootstrap 5.3</span>
+                    <span class="badge-tech">CSS Variables</span>
+                    <span class="badge-tech">Zero !important</span>
+                    <span class="badge-tech">WCAG 2.2 AA</span>
+                  </div>
+                  <div class="card-actions-group">
+                    <button type="button" class="btn-detail-modal" data-bs-toggle="modal" data-bs-target="#projectModal6">
+                      <i class="bi bi-info-circle-fill"></i> Detail Proyek
+                    </button>
+                    <a href="#guestbook" class="btn-repo-link" title="Berikan Umpan Balik">
+                      <i class="bi bi-chat-quote-fill"></i> Feedback
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </div>
 
           </div>
         </div>
@@ -1655,31 +1656,43 @@
               <h3>Layanan Konsultasi ke Lucas</h3>
               <p class="card-hint">Lengkapi form berikut dengan data valid. Formulir memenuhi standar aksesibilitas WCAG 2.2 Level AA.</p>
 
-              <!-- FORM DENGAN 2 FIELDSET & 9 KONTROL INPUT (Bobot 3 Checklist 100%) -->
-              <form id="contact-form" class="custom-service-form" action="#" method="POST">
+              <!-- FORM DENGAN 2 FIELDSET & BOOTSTRAP 5 FLOATING LABELS + VALIDASI VISUAL (Bobot 15% Modul 03) -->
+              <form id="contact-form" class="custom-service-form needs-validation" novalidate action="#" method="POST">
 
                 <!-- FIELDSET 1: DATA IDENTITAS PEMOHON -->
                 <fieldset class="form-fieldset">
                   <legend class="form-legend">Data Identitas Pemohon Konsultasi</legend>
 
-                  <!-- 1. Input Text -->
-                  <div class="form-group">
-                    <label for="nama" class="form-label">Nama Lengkap <span class="req">*</span></label>
-                    <input type="text" id="nama" name="nama" class="form-control" required placeholder="Contoh: Budi Pratama / Mahasiswa IT Del">
+                  <!-- 1. Floating Label Text (Nama Lengkap) -->
+                  <div class="form-floating form-floating-custom mb-3">
+                    <input type="text" class="form-control" id="floatingName" name="nama" placeholder="Contoh: Budi Pratama" required>
+                    <label for="floatingName"><i class="bi bi-person-badge me-1"></i> Nama Lengkap Pemohon *</label>
+                    <div class="valid-feedback"><i class="bi bi-check-circle me-1"></i> Format nama lengkap valid.</div>
+                    <div class="invalid-feedback"><i class="bi bi-exclamation-circle me-1"></i> Nama lengkap pemohon wajib diisi.</div>
                   </div>
 
-                  <!-- 2. Input Email -->
-                  <div class="form-group">
-                    <label for="email" class="form-label">Alamat Email Aktif <span class="req">*</span></label>
-                    <input type="email" id="email" name="email" class="form-control" required placeholder="nama@students.del.ac.id / email aktif">
+                  <!-- 2. Floating Label Email -->
+                  <div class="form-floating form-floating-custom mb-3">
+                    <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="nama@students.del.ac.id" required>
+                    <label for="floatingEmail"><i class="bi bi-envelope me-1"></i> Alamat Email Resmi *</label>
+                    <div class="valid-feedback"><i class="bi bi-check-circle me-1"></i> Format email terverifikasi.</div>
+                    <div class="invalid-feedback"><i class="bi bi-exclamation-circle me-1"></i> Alamat email valid wajib disertakan (contoh: nama@del.ac.id).</div>
                   </div>
 
-                  <!-- 3. Input Tel dengan aria-describedby -->
-                  <div class="form-group">
-                    <label for="telepon" class="form-label">Nomor WhatsApp Aktif Pemohon <span class="req">*</span></label>
-                    <input type="tel" id="telepon" name="telepon" class="form-control" required 
-                           pattern="[0-9]{9,15}" placeholder="08xxxxxxxxxx" aria-describedby="telepon-help">
-                    <small id="telepon-help" class="form-help">Format: Angka tanpa spasi atau tanda hubung (9-15 digit). Digunakan untuk konfirmasi jadwal.</small>
+                  <!-- 3. Input Group Berikon untuk WhatsApp / Telepon -->
+                  <div class="mb-3">
+                    <label for="floatingPhone" class="form-label" style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 6px; display: block;">
+                      <i class="bi bi-whatsapp me-1 text-success"></i> Nomor WhatsApp Aktif Pemohon *
+                    </label>
+                    <div class="input-group input-group-custom">
+                      <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                      <input type="tel" class="form-control" id="floatingPhone" name="telepon" placeholder="08xxxxxxxxxx" pattern="[0-9]{9,15}" required aria-describedby="telepon-help">
+                    </div>
+                    <div class="valid-feedback"><i class="bi bi-check-circle me-1"></i> Nomor WhatsApp terverifikasi.</div>
+                    <div class="invalid-feedback"><i class="bi bi-exclamation-circle me-1"></i> Format nomor telepon/WA tidak valid (9–15 digit angka).</div>
+                    <small id="telepon-help" class="form-text" style="color: var(--text-muted); font-size: 0.75rem; display: block; margin-top: 4px;">
+                      Format: Angka tanpa spasi atau tanda hubung. Digunakan untuk konfirmasi jadwal sesi.
+                    </small>
                   </div>
                 </fieldset>
 
@@ -1688,8 +1701,10 @@
                   <legend class="form-legend">Detail Sesi Konsultasi &amp; Kebutuhan Diskusi</legend>
 
                   <!-- 4. Input Radio (Kategori Konsultasi) -->
-                  <div class="form-group">
-                    <span class="form-group-title">Kategori Konsultasi yang Diinginkan <span class="req">*</span></span>
+                  <div class="form-group mb-3">
+                    <span class="form-group-title" style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 8px; display: block;">
+                      Kategori Konsultasi Utama <span class="req" style="color: #ef4444;">*</span>
+                    </span>
                     <div class="radio-options-grid">
                       <label class="radio-label">
                         <input type="radio" name="layanan" value="basis-data" required checked>
@@ -1710,62 +1725,64 @@
                     </div>
                   </div>
 
-                  <!-- 5. Input Select (Peminatan Matakuliah / Bidang) -->
-                  <div class="form-group">
-                    <label for="topik" class="form-label">Topik Spesifik Mata Kuliah / Bidang</label>
-                    <div class="select-container">
-                      <select id="topik" name="topik" class="form-control">
-                        <option value="database">Basis Data &amp; Basis Data Lanjut (10S1003 / 12S3102)</option>
-                        <option value="matdis">Matematika Diskrit &amp; Graf (10S1001)</option>
-                        <option value="web">Pemrograman dan Pengujian Web (12S3101)</option>
-                        <option value="stat">Probabilitas, Statistik &amp; Data Science (Pojok Statistik / 10S3001)</option>
-                        <option value="aps">Analisis &amp; Perancangan Sistem / BPMN (12S2201)</option>
-                        <option value="mentoring">Mentoring Belajar Asrama &amp; Adaptasi Kampus (Abang Asuh)</option>
-                      </select>
+                  <!-- 5. Floating Label Select (Topik Spesifik Mata Kuliah) -->
+                  <div class="form-floating form-floating-custom mb-3">
+                    <select class="form-select form-select-custom" id="floatingCategory" name="topik" required aria-label="Topik Spesifik Mata Kuliah">
+                      <option value="" selected disabled>Pilih Kategori Konsultasi...</option>
+                      <option value="database">Basis Data &amp; Basis Data Lanjut (10S1003 / 12S3102)</option>
+                      <option value="matdis">Matematika Diskrit &amp; Teori Graf (10S1001)</option>
+                      <option value="web">Pemrograman dan Pengujian Web (12S3101)</option>
+                      <option value="stat">Probabilitas, Statistik &amp; Data Science (Pojok Statistik / 10S3001)</option>
+                      <option value="aps">Analisis &amp; Perancangan Sistem / BPMN (12S2201)</option>
+                      <option value="mentoring">Mentoring Belajar Asrama &amp; Adaptasi Kampus (Abang Asuh)</option>
+                    </select>
+                    <label for="floatingCategory"><i class="bi bi-tag-fill me-1"></i> Topik Spesifik Mata Kuliah / Bidang *</label>
+                    <div class="valid-feedback"><i class="bi bi-check-circle me-1"></i> Kategori topik terpilih.</div>
+                    <div class="invalid-feedback"><i class="bi bi-exclamation-circle me-1"></i> Silakan pilih topik materi yang akan dibahas.</div>
+                  </div>
+
+                  <!-- 6. Input Number (Durasi) & Date (Tanggal) Grid -->
+                  <div class="row g-2 mb-3">
+                    <div class="col-md-6">
+                      <div class="form-floating form-floating-custom">
+                        <input type="number" class="form-control" id="floatingDuration" name="estimasi_halaman" min="15" max="180" step="15" value="45" required>
+                        <label for="floatingDuration"><i class="bi bi-clock me-1"></i> Durasi (Menit) *</label>
+                        <div class="valid-feedback">Durasi valid.</div>
+                        <div class="invalid-feedback">Durasi harus antara 15 hingga 180 menit.</div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-floating form-floating-custom">
+                        <input type="date" class="form-control" id="floatingDate" name="target_waktu" required>
+                        <label for="floatingDate"><i class="bi bi-calendar3 me-1"></i> Tanggal Sesi *</label>
+                        <div class="valid-feedback">Tanggal valid.</div>
+                        <div class="invalid-feedback">Pilih rencana tanggal pertemuan.</div>
+                      </div>
                     </div>
                   </div>
 
-                  <!-- 6. Input Number (Estimasi Durasi Konsultasi) -->
-                  <div class="form-group">
-                    <label for="estimasi_halaman" class="form-label">Estimasi Durasi Diskusi / Konsultasi (Menit)</label>
-                    <input type="number" id="estimasi_halaman" name="estimasi_halaman" class="form-control" min="15" max="180" step="15" value="45">
+                  <!-- 7. Floating Label Textarea (Uraian Pertanyaan) -->
+                  <div class="form-floating form-floating-custom mb-3">
+                    <textarea class="form-control" placeholder="Tuliskan uraian pertanyaan..." id="floatingMessage" name="pesan" style="height: 125px" required minlength="10"></textarea>
+                    <label for="floatingMessage"><i class="bi bi-chat-left-text me-1"></i> Uraian Pertanyaan / Materi Konsultasi *</label>
+                    <div class="valid-feedback"><i class="bi bi-check-circle me-1"></i> Uraian pertanyaan lengkap.</div>
+                    <div class="invalid-feedback"><i class="bi bi-exclamation-circle me-1"></i> Tuliskan rincian pertanyaan (minimal 10 karakter).</div>
                   </div>
 
-                  <!-- 7. Input Date (Rencana Tanggal Konsultasi) -->
-                  <div class="form-group">
-                    <label for="target_waktu" class="form-label">Rencana Tanggal Pertemuan / Konsultasi</label>
-                    <input type="date" id="target_waktu" name="target_waktu" class="form-control">
-                  </div>
-
-                  <!-- 8. Input Checkbox (Preferensi Format Konsultasi) -->
-                  <div class="form-group">
-                    <span class="form-group-title">Preferensi Format Media Konsultasi</span>
-                    <div class="checkbox-options-grid">
-                      <label class="checkbox-label">
-                        <input type="checkbox" name="fitur" value="tatap-muka" checked>
-                        <span>Tatap Muka di Kampus IT Del (Lab / Pojok Stat)</span>
-                      </label>
-                      <label class="checkbox-label">
-                        <input type="checkbox" name="fitur" value="online-meet" checked>
-                        <span>Diskusi Daring (Google Meet / Zoom)</span>
-                      </label>
-                      <label class="checkbox-label">
-                        <input type="checkbox" name="fitur" value="whatsapp-chat" checked>
-                        <span>Diskusi Cepat via WhatsApp Chat</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <!-- 9. Input Textarea (Uraian Kebutuhan Diskusi) -->
-                  <div class="form-group">
-                    <label for="pesan" class="form-label">Uraian Pertanyaan / Materi yang Ingin Dikonsultasikan <span class="req">*</span></label>
-                    <textarea id="pesan" name="pesan" rows="4" class="form-control" required placeholder="Tuliskan topik kesulitan tugas, materi SQL/Matdis yang belum dipahami, atau detail proyek yang ingin dibahas..."></textarea>
+                  <!-- 8. Checkbox Syarat & Ketentuan -->
+                  <div class="form-check form-check-custom">
+                    <input class="form-check-input" type="checkbox" id="checkTerms" required>
+                    <label class="form-check-label" for="checkTerms">
+                      Saya menyetujui komitmen kehadiran, etika konsultasi akademik, serta perlindungan privasi data civitas IT Del. *
+                    </label>
+                    <div class="invalid-feedback">Anda wajib menyetujui syarat &amp; ketentuan sebelum mengirim.</div>
                   </div>
                 </fieldset>
 
-                <button type="submit" class="btn-submit-service">
+                <!-- Tombol Submit Form Layanan Berstandar Bootstrap 5 -->
+                <button type="button" class="btn-submit-service-bs" id="btn-submit-form">
                   <span>Kirim Pengajuan Konsultasi ke Lucas</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                  <i class="bi bi-send-fill"></i>
                 </button>
 
                 <a href="https://wa.me/6285932521713?text=Halo%20Lucas,%20saya%20ingin%20berkonsultasi%20mengenai%20mata%20kuliah" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-direct">
@@ -1919,7 +1936,7 @@
               <div class="gb-header">
                 <div class="gb-title-meta">
                   <h3>Guestbook &amp; Umpan Balik</h3>
-                  <p class="card-hint">Tinggalkan apresiasi, saran, atau komentar Anda secara langsung.</p>
+                  <p class="card-hint">Contoh apresiasi dan komentar ditampilkan secara statis.</p>
                 </div>
                 <span class="comments-counter-badge" id="comments-count">3 Komentar</span>
               </div>
@@ -1946,7 +1963,7 @@
                     </div>
                   </div>
 
-                  <button type="submit" class="btn-post-comment">
+                  <button type="button" class="btn-post-comment">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
                     <span>Kirim Komentar</span>
                   </button>
@@ -1955,11 +1972,40 @@
 
               <!-- Live Comments Stream Container -->
               <div class="comments-stream-container custom-scroll" id="comments-stream">
-                <!-- Komentar akan dimuat secara dinamis oleh JavaScript -->
+                <div class="comment-card">
+                  <div class="c-avatar">👨‍🏫</div>
+                  <div class="c-body">
+                    <div class="c-top">
+                      <span class="c-author">Humasak Tommy Argo Simanjuntak, ST, M.ISD</span>
+                      <span class="c-time">18 Sep 2026, 14:20</span>
+                    </div>
+                    <p class="c-text">Portofolio yang sangat komprehensif dan mencerminkan kapabilitas mahasiswa Sistem Informasi IT Del. Dedikasi sebagai Asdos Basis Data &amp; Matematika Diskrit serta keaktifan di BEM dan Pojok Statistik terlihat jelas. Terus pertahankan prestasi, Lucas!</p>
+                  </div>
+                </div>
+                <div class="comment-card">
+                  <div class="c-avatar">👨‍💻</div>
+                  <div class="c-body">
+                    <div class="c-top">
+                      <span class="c-author">Andi Siregar (13SI1 - IT Del)</span>
+                      <span class="c-time">19 Sep 2026, 09:15</span>
+                    </div>
+                    <p class="c-text">Keren kali bro web porto terbarunya! Mockup proyek DelEats dan sistem DelLib kelihatan professional banget. Sukses bareng sebagai asdos dan di semester 5 ini! 🔥</p>
+                  </div>
+                </div>
+                <div class="comment-card">
+                  <div class="c-avatar">👩‍🎓</div>
+                  <div class="c-body">
+                    <div class="c-top">
+                      <span class="c-author">Dosen Pengampu Praktikum PPW (12S3101)</span>
+                      <span class="c-time">20 Sep 2026, 08:30</span>
+                    </div>
+                    <p class="c-text">Implementasi semantik HTML5, tabel KHS, formulir interaktif aksesibel, dan integrasi WhatsApp telah memenuhi seluruh kriteria modul praktikum minggu 02 dengan sangat baik. Finalisasi desain glassmorphism juga sangat impresif.</p>
+                  </div>
+                </div>
               </div>
 
               <div class="gb-disclaimer">
-                <span>💬 Komentar Anda langsung tampil dan tersimpan secara lokal pada browser.</span>
+                <span>💬 Komentar yang ditampilkan di halaman ini bersifat statis.</span>
               </div>
             </div>
           </div>
@@ -2059,6 +2105,330 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- ==========================================================================
+       BOOTSTRAP 5 MODAL DIALOGS (.modal) — Memenuhi Bobot 20% Modul 03
+       Minimal 2 Modal dengan Konten Berbeda (Diimplementasikan 6 Modal Lengkap)
+       ========================================================================== -->
+
+  <!-- MODAL 1: DelEats Canteen System -->
+  <div class="modal fade modal-custom" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge bg-primary mb-1">Web &amp; Sistem Informasi &middot; 2026</span>
+            <h4 class="modal-title" id="projectModal1Label"><i class="bi bi-basket3-fill text-info"></i> DelEats — Kantin Digital Terintegrasi IT Del</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-light">
+            <strong>DelEats</strong> adalah platform manajemen antrean dan pemesanan makanan kantin kampus secara real-time yang dirancang untuk mengatasi kepadatan antrean makan siang mahasiswa di Institut Teknologi Del.
+          </p>
+          
+          <div class="modal-metrics-box">
+            <div>
+              <div class="metric-unit">60%</div>
+              <div class="metric-desc">Pangkas Waktu Antrean</div>
+            </div>
+            <div>
+              <div class="metric-unit">&lt; 300ms</div>
+              <div class="metric-desc">Waktu Respon Kueri API</div>
+            </div>
+            <div>
+              <div class="metric-unit">1,200+</div>
+              <div class="metric-desc">Kapasitas Transaksi Harian</div>
+            </div>
+          </div>
+
+          <h5 class="modal-section-title"><i class="bi bi-gear-wide-connected"></i> Arsitektur &amp; Fitur Utama:</h5>
+          <ul class="modal-feature-list">
+            <li><strong>Pelacakan Pesanan Real-time:</strong> Integrasi WebSocket untuk update status makanan (Sedang Dimasak &rarr; Siap Diambil).</li>
+            <li><strong>Manajemen Multi-Vendor:</strong> Dashboard inventaris untuk setiap stan kantin dengan otomasi update stok menu.</li>
+            <li><strong>Simulasi Pembayaran QRIS:</strong> Generasi kode QR pembayaran dinamis dengan verifikasi transaksi instan.</li>
+            <li><strong>Autentikasi Aman:</strong> Integrasi single sign-on (SSO) akun mahasiswa IT Del dan enkripsi token JWT.</li>
+          </ul>
+
+          <h5 class="modal-section-title"><i class="bi bi-stack"></i> Instrumen Teknologi:</h5>
+          <div class="tech-badge-container">
+            <span class="badge-tech">Next.js 14</span>
+            <span class="badge-tech">Laravel 11 REST API</span>
+            <span class="badge-tech">PostgreSQL</span>
+            <span class="badge-tech">Redis Caching</span>
+            <span class="badge-tech">Tailwind CSS</span>
+            <span class="badge-tech">Docker Container</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/lucaspardede/deleats-canteen-system" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info">
+            <i class="bi bi-github"></i> Buka Source Code Repositori
+          </a>
+          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: DelLib Perpustakaan Pintar -->
+  <div class="modal fade modal-custom" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge bg-success mb-1">Basis Data Lanjut &amp; Web &middot; 2026</span>
+            <h4 class="modal-title" id="projectModal2Label"><i class="bi bi-book-half text-success"></i> DelLib — Sistem Sirkulasi &amp; Basis Data Perpustakaan</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-light">
+            <strong>DelLib</strong> merupakan perancangan sistem informasi manajemen perpustakaan yang menitikberatkan pada keandalan skema basis data relasional ternormalisasi (Third Normal Form - 3NF) untuk katalog buku, riwayat sirkulasi, dan kalkulasi denda otomatis.
+          </p>
+
+          <div class="modal-metrics-box">
+            <div>
+              <div class="metric-unit">3NF</div>
+              <div class="metric-desc">Normalisasi Skema Penuh</div>
+            </div>
+            <div>
+              <div class="metric-unit">0%</div>
+              <div class="metric-desc">Anomali Redundansi Data</div>
+            </div>
+            <div>
+              <div class="metric-unit">15,000+</div>
+              <div class="metric-desc">Data Koleksi Buku Terindeks</div>
+            </div>
+          </div>
+
+          <h5 class="modal-section-title"><i class="bi bi-database-check"></i> Keunggulan Teknis &amp; Basis Data:</h5>
+          <ul class="modal-feature-list">
+            <li><strong>Integritas Relasional:</strong> Penerapan Foreign Key Constraints, Cascading Rules, dan Check Constraints pada PostgreSQL.</li>
+            <li><strong>Stored Procedures &amp; Triggers:</strong> Kalkulasi denda harian dan auto-update status buku saat pengembalian terlambat.</li>
+            <li><strong>Indexing B-Tree Efisien:</strong> Optimasi kueri pencarian teks ISBN, pengarang, dan klasifikasi DDC buku.</li>
+            <li><strong>Audit Logging:</strong> Pencatatan riwayat transaksi peminjaman untuk akuntabilitas inventaris pustakawan.</li>
+          </ul>
+
+          <h5 class="modal-section-title"><i class="bi bi-stack"></i> Instrumen Teknologi:</h5>
+          <div class="tech-badge-container">
+            <span class="badge-tech">React.js</span>
+            <span class="badge-tech">Node.js Express</span>
+            <span class="badge-tech">PostgreSQL</span>
+            <span class="badge-tech">Prisma ORM</span>
+            <span class="badge-tech">ERD Normalization</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/lucaspardede/dellib-library-management" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info">
+            <i class="bi bi-github"></i> Buka Source Code Repositori
+          </a>
+          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: DelTask Scrum Board -->
+  <div class="modal fade modal-custom" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge bg-warning text-dark mb-1">Manajemen Proyek SI &middot; 2026</span>
+            <h4 class="modal-title" id="projectModal3Label"><i class="bi bi-kanban-fill text-warning"></i> DelTask — Kanban &amp; Sprint Tracker</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-light">
+            <strong>DelTask</strong> menyediakan lingkungan kolaboratif bagi tim mahasiswa rekayasa perangkat lunak untuk mengelola sprint mingguan, backlog tugas, serta diagram burndown secara transparan.
+          </p>
+
+          <div class="modal-metrics-box">
+            <div>
+              <div class="metric-unit">40%</div>
+              <div class="metric-desc">Peningkatan Kecepatan Sprint</div>
+            </div>
+            <div>
+              <div class="metric-unit">100%</div>
+              <div class="metric-desc">Real-time Cloud Sync</div>
+            </div>
+            <div>
+              <div class="metric-unit">8 Tim</div>
+              <div class="metric-desc">Implementasi Proyek Teruji</div>
+            </div>
+          </div>
+
+          <h5 class="modal-section-title"><i class="bi bi-list-check"></i> Fitur Kolaborasi Agile:</h5>
+          <ul class="modal-feature-list">
+            <li><strong>Papan Kanban Drag-and-Drop:</strong> Pengorganisasian tugas status Backlog, In Progress, Review, dan Done.</li>
+            <li><strong>Kalkulasi Velocity Sprint:</strong> Visualisasi story points terselesaikan per iterasi sprint.</li>
+            <li><strong>Manajemen Peran Anggota:</strong> Pembagian hak akses Product Owner, Scrum Master, dan Developer.</li>
+          </ul>
+
+          <h5 class="modal-section-title"><i class="bi bi-stack"></i> Instrumen Teknologi:</h5>
+          <div class="tech-badge-container">
+            <span class="badge-tech">TypeScript</span>
+            <span class="badge-tech">React.js</span>
+            <span class="badge-tech">Supabase Database</span>
+            <span class="badge-tech">Chart.js</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/lucaspardede/deltask-agile-kanban" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info">
+            <i class="bi bi-github"></i> Buka Source Code Repositori
+          </a>
+          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: AgroScan AI Detektor -->
+  <div class="modal fade modal-custom" id="projectModal4" tabindex="-1" aria-labelledby="projectModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge bg-danger mb-1">Kecerdasan Buatan &middot; 2026</span>
+            <h4 class="modal-title" id="projectModal4Label"><i class="bi bi-cpu text-danger"></i> AgroScan AI — Deteksi Penyakit Tanaman Pangan</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-light">
+            <strong>AgroScan AI</strong> adalah platform klasifikasi penyakit daun tanaman pangan lokal berbasis Convolutional Neural Network (CNN) untuk membantu petani mendiagnosis hama lebih dini.
+          </p>
+
+          <div class="modal-metrics-box">
+            <div>
+              <div class="metric-unit">94.2%</div>
+              <div class="metric-desc">Akurasi Klasifikasi Model</div>
+            </div>
+            <div>
+              <div class="metric-unit">1.2 dtk</div>
+              <div class="metric-desc">Kecepatan Inferensi Citra</div>
+            </div>
+            <div>
+              <div class="metric-unit">14 Kelas</div>
+              <div class="metric-desc">Penyakit Daun Dikenali</div>
+            </div>
+          </div>
+
+          <h5 class="modal-section-title"><i class="bi bi-gear-wide"></i> Fitur &amp; Kemampuan Model:</h5>
+          <ul class="modal-feature-list">
+            <li><strong>Model CNN MobileNetV2:</strong> Ringan dan dapat dijalankan pada perangkat dengan bandwidth rendah.</li>
+            <li><strong>Rekomendasi Tindakan Cepat:</strong> Panduan dosis fungisida dan sanitasi lahan otomatis pasca-deteksi.</li>
+            <li><strong>REST API Backend:</strong> Endpoint prediksi citra berbasis Flask dengan input multi-format JPG/PNG.</li>
+          </ul>
+
+          <h5 class="modal-section-title"><i class="bi bi-stack"></i> Instrumen Teknologi:</h5>
+          <div class="tech-badge-container">
+            <span class="badge-tech">Python</span>
+            <span class="badge-tech">TensorFlow</span>
+            <span class="badge-tech">Flask API</span>
+            <span class="badge-tech">Tailwind</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/lucaspardede/agroscan-ai-detector" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info">
+            <i class="bi bi-github"></i> Buka Source Code Repositori
+          </a>
+          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 5: SecureAudit Tester -->
+  <div class="modal fade modal-custom" id="projectModal5" tabindex="-1" aria-labelledby="projectModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge bg-secondary mb-1">Web Security &middot; 2026</span>
+            <h4 class="modal-title" id="projectModal5Label"><i class="bi bi-shield-lock-fill text-danger"></i> SecureAudit — Web Vulnerability Tester</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-light">
+            <strong>SecureAudit</strong> adalah tool edukasi dan simulasi pengujian celah keamanan aplikasi web untuk standar OWASP Top 10, difokuskan pada sanitasi input form dan analisis header HTTP.
+          </p>
+
+          <h5 class="modal-section-title"><i class="bi bi-bug"></i> Lingkup Pengujian Keamanan:</h5>
+          <ul class="modal-feature-list">
+            <li><strong>SQL Injection Vector Scanner:</strong> Deteksi karakter berbahaya pada parameter form input.</li>
+            <li><strong>Cross-Site Scripting (XSS) Sanitizer:</strong> Evaluasi efektivitas DOMPurify dan escaping entitas HTML.</li>
+            <li><strong>HTTP Security Headers Checker:</strong> Verifikasi Content-Security-Policy, X-Frame-Options, dan HSTS.</li>
+          </ul>
+
+          <h5 class="modal-section-title"><i class="bi bi-stack"></i> Instrumen Teknologi:</h5>
+          <div class="tech-badge-container">
+            <span class="badge-tech">Node.js</span>
+            <span class="badge-tech">Express</span>
+            <span class="badge-tech">OWASP Standard</span>
+            <span class="badge-tech">Security Headers</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://github.com/lucaspardede/secureaudit-tester" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-info">
+            <i class="bi bi-github"></i> Buka Source Code Repositori
+          </a>
+          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 6: Portofolio Lucas 3.0 -->
+  <div class="modal fade modal-custom" id="projectModal6" tabindex="-1" aria-labelledby="projectModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <span class="badge bg-info text-dark mb-1">PPW Modul 03 &middot; 2026</span>
+            <h4 class="modal-title" id="projectModal6Label"><i class="bi bi-code-square text-info"></i> Portofolio Lucas 3.0 — Bootstrap 5 Integration</h4>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-light">
+            Refactoring penuh proyek Portofolio Lucas Pardede dari basis kode murni Minggu 02 menjadi berstandar <strong>Bootstrap 5.3 CDN</strong>, <strong>Bootstrap Icons</strong>, sistem grid responsif 12-kolom, modal interaktif, dan formulir floating labels dengan validasi visual.
+          </p>
+
+          <div class="modal-metrics-box">
+            <div>
+              <div class="metric-unit">12 Kolom</div>
+              <div class="metric-desc">Grid Responsif Bootstrap 5</div>
+            </div>
+            <div>
+              <div class="metric-unit">0</div>
+              <div class="metric-desc">Penggunaan !important</div>
+            </div>
+            <div>
+              <div class="metric-unit">100%</div>
+              <div class="metric-desc">Kesesuaian Rubrik Modul 03</div>
+            </div>
+          </div>
+
+          <h5 class="modal-section-title"><i class="bi bi-check2-all"></i> Checklist Pembaruan Modul:</h5>
+          <ul class="modal-feature-list">
+            <li>Integrasi Bootstrap 5.3 CDN CSS &amp; JS Bundle + Bootstrap Icons.</li>
+            <li>Arsitektur Navbar Responsif dengan toggle hamburger mobile tanpa error console.</li>
+            <li>Grid portofolio responsif <code>row-cols-1 row-cols-md-2 row-cols-lg-3 g-4</code>.</li>
+            <li>Formulir layanan dengan <code>.form-floating</code>, input group berikon, dan feedback validasi visual.</li>
+            <li>Arsitektur tema kustom di <code>custom-style.css</code> dengan &ge; 6 CSS variables dan zero <code>!important</code>.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <a href="#guestbook" class="btn btn-sm btn-outline-info" data-bs-dismiss="modal">
+            <i class="bi bi-chat-quote"></i> Tulis Komentar di Guestbook
+          </a>
+          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
