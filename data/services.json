@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "code": "basis-data",
+    "title": "Konsultasi Basis Data & Arsitektur SQL",
+    "category": "Akademik & Rekayasa Data",
+    "role": "Asisten Dosen Basis Data (2025 & 2026)",
+    "description": "Bimbingan perancangan skema konseptual, normalisasi relasional (1NF hingga BCNF), optimasi kueri kompleks SQL, manajemen transaksi ACID, dan perancangan trigger/stored procedure.",
+    "duration": "45 - 90 Menit",
+    "format": "Online (Google Meet) / Tatap Muka (Lab Komputer IT Del)",
+    "fee": "Gratis (Civitas Akademika IT Del)",
+    "badge": "Terpopuler",
+    "benefits": [
+      "Review ERD & Normalisasi Skema Database",
+      "Debugging Kueri SQL Lambat & Analisis Indexing",
+      "Panduan Tugas Besar & Praktikum Basis Data",
+      "Materi Tambahan Cheatsheet SQL & PostgreSQL"
+    ],
+    "targetAudience": "Mahasiswa Tingkat 1 & 2 S1 SI/IF yang menempuh mata kuliah Basis Data & Basis Data Lanjut."
+  },
+  {
+    "id": 2,
+    "code": "matematika-diskrit",
+    "title": "Bimbingan Matematika Diskrit & Logika",
+    "category": "Fondasi Komputasi & Matematika",
+    "role": "Asisten Dosen Matematika Diskrit (2025)",
+    "description": "Pemantapan konsep logika proposisi dan predikat, teori himpunan, relasi dan fungsi, induksi matematika, rekursi, serta aplikasi teori graf dalam pemodelan jaringan komputer.",
+    "duration": "45 - 60 Menit",
+    "format": "Tatap Muka Asrama / Ruang Kelas IT Del",
+    "fee": "Gratis (Civitas Akademika IT Del)",
+    "badge": "Akademik",
+    "benefits": [
+      "Bedah Pembuktian Matematis (Induksi & Kontradiksi)",
+      "Penyelesaian Masalah Algoritma Graf (Dijkstra, BFS/DFS)",
+      "Latihan Soal Kuis, UTS, dan UAS Terbimbing",
+      "Sesi Tanya Jawab Interaktif Santai"
+    ],
+    "targetAudience": "Mahasiswa S1 Sistem Informasi & Informatika semester awal yang memerlukan penguatan logika dasar."
+  },
+  {
+    "id": 3,
+    "code": "web-development",
+    "title": "Pengembangan Website Modern & Fullstack Dev",
+    "category": "Rekayasa Perangkat Lunak Web",
+    "role": "Fullstack Web & PPW Developer",
+    "description": "Konsultasi dan bimbingan arsitektur web modern: HTML5 semantik, CSS Grid & Flexbox, Bootstrap 5, integrasi RESTful API, JavaScript ES6+ asinkron, hingga deployment GitHub Pages.",
+    "duration": "60 - 120 Menit",
+    "format": "Hybrid / Pair Programming",
+    "fee": "Gratis (Tugas Kuliah) / Sesuai Kesepakatan Proyek",
+    "badge": "Praktikum PPW",
+    "benefits": [
+      "Review Kode Arsitektur (Decoupled, CSR, Component)",
+      "Debugging Console Error & Validasi Aksesibilitas WCAG",
+      "Setup Responsive Grid & Custom Theme CSS",
+      "Git Workflow & Konfigurasi GitHub Pages"
+    ],
+    "targetAudience": "Mahasiswa praktikum PPW atau tim proyek yang sedang membangun produk web responsif."
+  },
+  {
+    "id": 4,
+    "code": "sistem-informasi",
+    "title": "Analisis Sistem, BPMN & Manajemen Proyek TI",
+    "category": "Tata Kelola & Manajemen TI",
+    "role": "Anggota DIPTEK BEM IT Del & Awardee Privy",
+    "description": "Bimbingan pemodelan proses bisnis terstandarisasi BPMN 2.0, spesifikasi kebutuhan perangkat lunak (SRS), user stories Scrum, estimasi sprint, serta penyusunan dokumen arsitektur C4.",
+    "duration": "45 - 90 Menit",
+    "format": "Diskusi Ruang Diskusi Kampus IT Del",
+    "fee": "Gratis (Civitas IT Del)",
+    "badge": "Manajemen Proyek",
+    "benefits": [
+      "Pemodelan Diagram BPMN 2.0 & Diagram UML",
+      "Penyusunan Backlog & Sprint Planning Agile Scrum",
+      "Review Analisis Kelayakan Sistem Informasi",
+      "Simulasi Presentasi Proyek & Deliverables"
+    ],
+    "targetAudience": "Tim mahasiswa yang sedang mengerjakan tugas Rekayasa Kebutuhan atau Manajemen Proyek TI."
+  }
+]

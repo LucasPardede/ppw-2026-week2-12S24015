@@ -1,0 +1,40 @@
+{
+  "developer": {
+    "name": "Lucas Pardede",
+    "nim": "12S24015",
+    "account": "iss24015",
+    "class": "13SI1",
+    "cohort": "2024",
+    "degree": "S1 Sistem Informasi",
+    "faculty": "Fakultas Informatika dan Teknik Elektro (FITE)",
+    "institution": "Institut Teknologi Del (IT Del)",
+    "location": "Laguboti, Toba, Sumatera Utara, Indonesia",
+    "academicAdvisor": "Humasak Tommy Argo Simanjuntak, ST, M.ISD",
+    "avatar": "1789810572646.jpg",
+    "headline": "Merancang Sistem Digital & Solusi Data yang Efisien, Handal & Berdampak",
+    "bio": "Mahasiswa aktif S1 Sistem Informasi angkatan 2024 di Institut Teknologi Del (IT Del). Mengabdi sebagai Asisten Dosen Basis Data (2025 & 2026) dan Asisten Dosen Matematika Diskrit (2025), penerima Beasiswa Privy 2025 dan Beasiswa Prestasi IT Del, serta aktif sebagai Anggota DIPTEK BEM IT DEL (2025/2026) dan Agen Pojok Statistik.",
+    "roles": [
+      "Asisten Dosen Basis Data & Matdis",
+      "S1 Sistem Informasi IT Del",
+      "Awardee Beasiswa Privy 2025",
+      "Anggota DIPTEK BEM IT DEL",
+      "Agen Pojok Statistik IT Del",
+      "Fullstack Web & Database Engineer"
+    ],
+    "contacts": {
+      "email": "lucaspardede184@gmail.com",
+      "studentEmail": "iss24015@students.del.ac.id",
+      "whatsapp": "085932521713",
+      "whatsappUrl": "https://wa.me/6285932521713",
+      "linkedin": "https://www.linkedin.com/in/lucas-pardede-2479453ab",
+      "github": "https://github.com/LucasPardede"
+    },
+    "statistics": {
+      "gpa": "3.8+",
+      "completedCourses": 48,
+      "projectsCount": 6,
+      "certifications": 8,
+      "consultationSessions": 34
+    }
+  }
+}

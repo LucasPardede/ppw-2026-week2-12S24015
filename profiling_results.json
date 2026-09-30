@@ -1,0 +1,227 @@
+{
+  "cold_load": {
+    "ttfb": 2,
+    "domContentLoaded": 1543,
+    "loadEvent": 1592,
+    "fcp": 1400,
+    "totalResources": 13,
+    "resources": [
+      {
+        "name": "css2",
+        "initiatorType": "link",
+        "duration": 385,
+        "transferSize": 1271,
+        "decodedBodySize": 19976
+      },
+      {
+        "name": "bootstrap.min.css",
+        "initiatorType": "link",
+        "duration": 391,
+        "transferSize": 33506,
+        "decodedBodySize": 232803
+      },
+      {
+        "name": "bootstrap-icons.min.css",
+        "initiatorType": "link",
+        "duration": 562,
+        "transferSize": 13683,
+        "decodedBodySize": 85875
+      },
+      {
+        "name": "custom-style.css",
+        "initiatorType": "link",
+        "duration": 15,
+        "transferSize": 93802,
+        "decodedBodySize": 93502
+      },
+      {
+        "name": "1789810572646.jpg",
+        "initiatorType": "img",
+        "duration": 14,
+        "transferSize": 313040,
+        "decodedBodySize": 312740
+      },
+      {
+        "name": "bootstrap.bundle.min.js",
+        "initiatorType": "script",
+        "duration": 382,
+        "transferSize": 24764,
+        "decodedBodySize": 80721
+      },
+      {
+        "name": "api-service.js",
+        "initiatorType": "script",
+        "duration": 35,
+        "transferSize": 5816,
+        "decodedBodySize": 5516
+      },
+      {
+        "name": "app.js",
+        "initiatorType": "script",
+        "duration": 24,
+        "transferSize": 38422,
+        "decodedBodySize": 38122
+      },
+      {
+        "name": "services.json",
+        "initiatorType": "fetch",
+        "duration": 129,
+        "transferSize": 4032,
+        "decodedBodySize": 3732
+      },
+      {
+        "name": "profile.json",
+        "initiatorType": "fetch",
+        "duration": 129,
+        "transferSize": 1949,
+        "decodedBodySize": 1649
+      },
+      {
+        "name": "favicon.ico",
+        "initiatorType": "other",
+        "duration": 118,
+        "transferSize": 635,
+        "decodedBodySize": 335
+      },
+      {
+        "name": "projects.json",
+        "initiatorType": "fetch",
+        "duration": 12,
+        "transferSize": 11677,
+        "decodedBodySize": 11377
+      }
+    ]
+  },
+  "warm_load": {
+    "ttfb": 3.8,
+    "domContentLoaded": 213,
+    "loadEvent": 233,
+    "fcp": 848,
+    "totalResources": 15,
+    "cachedResources": 14,
+    "resources": [
+      {
+        "name": "css2",
+        "initiatorType": "link",
+        "duration": 0,
+        "transferSize": 0,
+        "decodedBodySize": 19976
+      },
+      {
+        "name": "bootstrap.min.css",
+        "initiatorType": "link",
+        "duration": 0,
+        "transferSize": 0,
+        "decodedBodySize": 232803
+      },
+      {
+        "name": "bootstrap-icons.min.css",
+        "initiatorType": "link",
+        "duration": 0,
+        "transferSize": 0,
+        "decodedBodySize": 85875
+      },
+      {
+        "name": "custom-style.css",
+        "initiatorType": "link",
+        "duration": 0,
+        "transferSize": 0,
+        "decodedBodySize": 93502
+      },
+      {
+        "name": "1789810572646.jpg",
+        "initiatorType": "img",
+        "duration": 0,
+        "transferSize": 0,
+        "decodedBodySize": 312740
+      },
+      {
+        "name": "tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwg.woff2",
+        "initiatorType": "css",
+        "duration": 0,
+        "transferSize": 0,
+        "decodedBodySize": 31432
+      },
+      {
+        "name": "LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2",
+        "initiatorType": "css",
+        "duration": 0,
+        "transferSize": 0,
+        "decodedBodySize": 27348
+      },
+      {
+        "name": "bootstrap-icons.woff2",
+        "initiatorType": "css",
+        "duration": 0,
+        "transferSize": 0,
+        "decodedBodySize": 130396
+      },
+      {
+        "name": "bootstrap.bundle.min.js",
+        "initiatorType": "script",
+        "duration": 0,
+        "transferSize": 0,
+        "decodedBodySize": 80721
+      },
+      {
+        "name": "api-service.js",
+        "initiatorType": "script",
+        "duration": 0,
+        "transferSize": 0,
+        "decodedBodySize": 5516
+      },
+      {
+        "name": "app.js",
+        "initiatorType": "script",
+        "duration": 0,
+        "transferSize": 0,
+        "decodedBodySize": 38122
+      },
+      {
+        "name": "services.json",
+        "initiatorType": "fetch",
+        "duration": 9,
+        "transferSize": 0,
+        "decodedBodySize": 3732
+      },
+      {
+        "name": "profile.json",
+        "initiatorType": "fetch",
+        "duration": 9,
+        "transferSize": 0,
+        "decodedBodySize": 1649
+      },
+      {
+        "name": "projects.json",
+        "initiatorType": "fetch",
+        "duration": 4,
+        "transferSize": 0,
+        "decodedBodySize": 11377
+      }
+    ]
+  },
+  "verification": {
+    "dynamic_csr": true,
+    "project_cards_count": 6,
+    "universal_modal": true,
+    "ui_states": [
+      "loading",
+      "success",
+      "empty",
+      "error"
+    ],
+    "localStorage_order": {
+      "id": "ORD-1790741369595",
+      "submittedAt": "30 Sep 2026, 11.09",
+      "nama": "Budi Pratama",
+      "email": "budi@students.del.ac.id",
+      "telepon": "081234567890",
+      "layanan": "Konsultasi Basis Data & SQL (Asdos Basis Data)",
+      "layananSlug": "basis-data",
+      "topik": "database",
+      "durasi": "60",
+      "tanggal": "2026-10-05",
+      "pesan": "Ingin konsultasi mengenai skema 3NF dan indexing B-Tree."
+    }
+  }
+}
