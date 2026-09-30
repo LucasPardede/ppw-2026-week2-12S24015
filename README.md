@@ -100,13 +100,16 @@ Arsitektur aplikasi dibagi menjadi 3 tingkatan independen:
 Struktur berkas repositori telah direstrukturisasi menjadi:
 
 ```text
-ppw-2026-week4-12S24015/
+ppw-2026-week2-12S24015/
 │
 ├── index.html                           # Shell HTML5 & Bootstrap 5 bersih tanpa hardcoded cards
 ├── README.md                            # Dokumentasi teknis, C4 diagram, komparasi & profil performa
-├── 1789810572646.jpg                    # Aset foto profil mahasiswa resmi IT Del
-├── network_waterfall_screenshot.png     # Bukti tangkapan layar pengujian Browser DevTools
 ├── profiling_results.json               # Data terstruktur hasil pengujian performa Cold/Warm load
+│
+├── assets/
+│   └── images/
+│       ├── 1789810572646.jpg            # Aset foto profil mahasiswa resmi IT Del
+│       └── network_waterfall_screenshot.png  # Bukti tangkapan layar pengujian Browser DevTools
 │
 ├── css/
 │   └── custom-style.css                 # Unified stylesheet (style.css + custom-style.css + Week 4 styles)
@@ -117,7 +120,8 @@ ppw-2026-week4-12S24015/
 │   └── services.json                    # Katalog 4 paket layanan konsultasi, fitur, dan tarif
 │
 └── js/
-    ├── api-service.js                   # Data Access Layer: HTTP Fetch, POST REST & Error Handling
+    ├── api-service.js                   # Data Access Layer: HTTP Fetch, POST REST, Error Handling
+    │                                    #   + Embedded fallback data (resilient di file:// protocol)
     └── app.js                           # Presentation/Logic Tier: DOM Control, CSR, Modal & Local State
 ```
 
