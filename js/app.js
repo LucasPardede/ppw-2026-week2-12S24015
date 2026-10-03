@@ -35,6 +35,7 @@ class PortfolioApp {
     this.initScrollEffects();
     this.initIntersectionObservers();
     this.initGuestbook();
+    this.initPrintButton();
     
     // Inisialisasi Arsitektur Week 4
     this.initOrdersState();
@@ -998,6 +999,19 @@ class PortfolioApp {
     const sections = document.querySelectorAll('section[id], div[id="guestbook"]');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    // Lock manual: saat user klik nav link, tahan highlight selama scroll berlangsung
+    let _manualActiveHref = null;
+    let _manualActiveTimer = null;
+
+    const setActiveLink = (href) => {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === href) {
+          link.classList.add('active');
+        }
+      });
+    };
+
     const onScroll = () => {
       const scrollY = window.scrollY;
 
@@ -1011,7 +1025,12 @@ class PortfolioApp {
         else bttBtn.classList.remove('visible');
       }
 
-      const scrollPos = scrollY + 140;
+      // Jika sedang dalam mode manual (klik nav), jangan override highlight
+      if (_manualActiveHref) return;
+
+      // Offset diperbesar agar lebih akurat saat section tinggi
+      const headerH = siteHeader ? siteHeader.offsetHeight : 74;
+      const scrollPos = scrollY + headerH + 20;
       let current = '';
       sections.forEach(sec => {
         const top = sec.offsetTop;
@@ -1039,7 +1058,7 @@ class PortfolioApp {
       });
     }
 
-    // Smooth scroll for anchor links
+    // Smooth scroll for anchor links + langsung highlight nav item yang diklik
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e) => {
         const href = anchor.getAttribute('href');
@@ -1049,9 +1068,39 @@ class PortfolioApp {
           e.preventDefault();
           const headerH = siteHeader ? siteHeader.offsetHeight : 74;
           const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerH - 12;
+
+          // Jika ini adalah nav-link, langsung set active & lock agar tidak tertimpa scroll spy
+          if (anchor.classList.contains('nav-link')) {
+            // Resolusi: guestbook map ke #layanan
+            const activeHref = href === '#guestbook' ? '#layanan' : href;
+            setActiveLink(activeHref);
+            _manualActiveHref = activeHref;
+
+            // Lepas lock setelah scroll selesai (~800ms)
+            if (_manualActiveTimer) clearTimeout(_manualActiveTimer);
+            _manualActiveTimer = setTimeout(() => {
+              _manualActiveHref = null;
+            }, 900);
+          }
+
           window.scrollTo({ top: targetTop, behavior: 'smooth' });
         }
       });
+    });
+  }
+
+  /**
+   * Inisialisasi tombol Unduh / Cetak Portofolio (PDF) via window.print()
+   */
+  initPrintButton() {
+    const printBtn = document.getElementById('btn-download-cv');
+    if (!printBtn) return;
+    printBtn.addEventListener('click', () => {
+      this.showToastNotification(
+        'Membuka Dialog Cetak / Simpan PDF',
+        'Pilih "Simpan sebagai PDF" di dialog printer untuk mengunduh portofolio.'
+      );
+      setTimeout(() => window.print(), 600);
     });
   }
 
