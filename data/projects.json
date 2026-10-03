@@ -10,9 +10,18 @@
     "shortDescription": "Platform manajemen antrean dan pemesanan makanan kantin kampus secara real-time untuk memangkas waktu tunggu antrean mahasiswa hingga 60%, dilengkapi manajemen stok vendor dan simulasi QRIS.",
     "description": "DelEats adalah platform manajemen antrean dan pemesanan makanan kantin kampus secara real-time yang dirancang khusus untuk mengatasi kepadatan antrean makan siang mahasiswa di Institut Teknologi Del. Sistem ini mengintegrasikan antarmuka pelanggan untuk pemesanan cepat, modul kasir kantin untuk manajemen antrean pesanan, dan simulasi pembayaran QRIS terverifikasi.",
     "metrics": {
-      "item1": { "unit": "60%", "desc": "Pangkas Waktu Antrean" },
-      "item2": { "unit": "< 300ms", "desc": "Waktu Respon Kueri API" },
-      "item3": { "unit": "1,200+", "desc": "Kapasitas Transaksi Harian" }
+      "item1": {
+        "unit": "60%",
+        "desc": "Pangkas Waktu Antrean"
+      },
+      "item2": {
+        "unit": "< 300ms",
+        "desc": "Waktu Respon Kueri API"
+      },
+      "item3": {
+        "unit": "1,200+",
+        "desc": "Kapasitas Transaksi Harian"
+      }
     },
     "features": [
       "Pelacakan Pesanan Real-time: Integrasi WebSocket untuk update status makanan (Sedang Dimasak -> Siap Diambil).",
@@ -20,7 +29,14 @@
       "Simulasi Pembayaran QRIS: Generasi kode QR pembayaran dinamis dengan verifikasi transaksi instan.",
       "Autentikasi Aman: Integrasi single sign-on (SSO) akun mahasiswa IT Del dan enkripsi token JWT."
     ],
-    "tags": ["Next.js 14", "Laravel 11 REST API", "PostgreSQL", "Tailwind CSS", "Redis Caching", "Docker"],
+    "tags": [
+      "Next.js 14",
+      "Laravel 11 REST API",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Redis Caching",
+      "Docker"
+    ],
     "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
     "repoLink": "https://github.com/lucaspardede/deleats-canteen-system",
     "demoLink": "https://lucaspardede.github.io/deleats-canteen-system"
@@ -36,9 +52,18 @@
     "shortDescription": "Perancangan skema basis data relasional ternormalisasi (3NF) untuk katalog buku, riwayat peminjaman otomatis, kalkulasi denda harian, dan pencarian cepat menggunakan indexing B-Tree terstruktur.",
     "description": "DelLib merupakan perancangan sistem informasi manajemen perpustakaan yang menitikberatkan pada keandalan skema basis data relasional ternormalisasi (Third Normal Form - 3NF) untuk katalog buku, riwayat sirkulasi, dan kalkulasi denda otomatis. Mengeliminasi redundansi data serta menjamin konsistensi ACID transaksi peminjaman.",
     "metrics": {
-      "item1": { "unit": "3NF", "desc": "Normalisasi Skema Penuh" },
-      "item2": { "unit": "0%", "desc": "Anomali Redundansi Data" },
-      "item3": { "unit": "15,000+", "desc": "Data Koleksi Buku Terindeks" }
+      "item1": {
+        "unit": "3NF",
+        "desc": "Normalisasi Skema Penuh"
+      },
+      "item2": {
+        "unit": "0%",
+        "desc": "Anomali Redundansi Data"
+      },
+      "item3": {
+        "unit": "15,000+",
+        "desc": "Data Koleksi Buku Terindeks"
+      }
     },
     "features": [
       "Integritas Relasional: Penerapan Foreign Key Constraints, Cascading Rules, dan Check Constraints pada PostgreSQL.",
@@ -46,7 +71,14 @@
       "Indexing B-Tree Efisien: Optimasi kueri pencarian teks ISBN, pengarang, dan klasifikasi DDC buku.",
       "Audit Logging: Pencatatan riwayat transaksi peminjaman untuk akuntabilitas inventaris pustakawan."
     ],
-    "tags": ["React.js", "Node.js Express", "PostgreSQL", "Prisma ORM", "ERD Normalization", "B-Tree Indexing"],
+    "tags": [
+      "React.js",
+      "Node.js Express",
+      "PostgreSQL",
+      "Prisma ORM",
+      "ERD Normalization",
+      "B-Tree Indexing"
+    ],
     "image": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80",
     "repoLink": "https://github.com/lucaspardede/dellib-library-management",
     "demoLink": "https://lucaspardede.github.io/dellib-library-management"
@@ -62,9 +94,18 @@
     "shortDescription": "Aplikasi manajemen proyek kolaboratif untuk tim mahasiswa: mendukung drag-and-drop kartu tugas, estimasi story points, pelacakan velocity sprint, dan visualisasi diagram burndown.",
     "description": "DelTask menyediakan lingkungan kerja kolaboratif bagi tim mahasiswa rekayasa perangkat lunak untuk mengelola sprint mingguan, backlog tugas, serta diagram burndown secara transparan. Dirancang dengan prinsip metodologi Scrum dan sinkronisasi status real-time antar anggota tim.",
     "metrics": {
-      "item1": { "unit": "40%", "desc": "Peningkatan Kecepatan Sprint" },
-      "item2": { "unit": "100%", "desc": "Real-time Cloud Sync" },
-      "item3": { "unit": "8 Tim", "desc": "Implementasi Proyek Teruji" }
+      "item1": {
+        "unit": "40%",
+        "desc": "Peningkatan Kecepatan Sprint"
+      },
+      "item2": {
+        "unit": "100%",
+        "desc": "Real-time Cloud Sync"
+      },
+      "item3": {
+        "unit": "8 Tim",
+        "desc": "Implementasi Proyek Teruji"
+      }
     },
     "features": [
       "Papan Kanban Drag-and-Drop: Pengorganisasian tugas status Backlog, In Progress, Review, dan Done.",
@@ -72,7 +113,14 @@
       "Manajemen Peran Anggota: Pembagian hak akses Product Owner, Scrum Master, dan Developer.",
       "Integrasi Notifikasi: Webhook ke Discord/Telegram tim saat terjadi perpindahan task ke QA/Done."
     ],
-    "tags": ["TypeScript", "React.js", "Supabase Database", "Tailwind CSS", "Chart.js", "Agile Scrum"],
+    "tags": [
+      "TypeScript",
+      "React.js",
+      "Supabase Database",
+      "Tailwind CSS",
+      "Chart.js",
+      "Agile Scrum"
+    ],
     "image": "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=800&q=80",
     "repoLink": "https://github.com/lucaspardede/deltask-agile-kanban",
     "demoLink": "https://lucaspardede.github.io/deltask-agile-kanban"
@@ -88,9 +136,18 @@
     "shortDescription": "Aplikasi web interaktif klasifikasi penyakit daun tanaman pangan berbasis Convolutional Neural Network (CNN) dengan akurasi 94.2% dan integrasi saran tindakan penanganan preventif.",
     "description": "AgroScan AI adalah platform klasifikasi penyakit daun tanaman pangan lokal berbasis Convolutional Neural Network (CNN) untuk membantu petani mendiagnosis hama lebih dini. Pengguna cukup mengunggah foto daun tanaman yang sakit untuk mendapatkan prediksi diagnosis dan rekomendasi tindakan sanitasi lahan.",
     "metrics": {
-      "item1": { "unit": "94.2%", "desc": "Akurasi Klasifikasi Model" },
-      "item2": { "unit": "1.2 dtk", "desc": "Kecepatan Inferensi Citra" },
-      "item3": { "unit": "14 Kelas", "desc": "Penyakit Daun Dikenali" }
+      "item1": {
+        "unit": "94.2%",
+        "desc": "Akurasi Klasifikasi Model"
+      },
+      "item2": {
+        "unit": "1.2 dtk",
+        "desc": "Kecepatan Inferensi Citra"
+      },
+      "item3": {
+        "unit": "14 Kelas",
+        "desc": "Penyakit Daun Dikenali"
+      }
     },
     "features": [
       "Model CNN MobileNetV2: Arsitektur ringan yang dapat dijalankan pada perangkat dengan bandwidth rendah.",
@@ -98,7 +155,14 @@
       "REST API Backend: Endpoint prediksi citra berbasis Flask dengan input multi-format JPG/PNG.",
       "Data Logging Geografis: Pemetaan sebaran hama tanaman berbasis titik koordinat GPS pengguna."
     ],
-    "tags": ["Python", "TensorFlow", "Flask API", "OpenCV", "Tailwind CSS", "Computer Vision"],
+    "tags": [
+      "Python",
+      "TensorFlow",
+      "Flask API",
+      "OpenCV",
+      "Tailwind CSS",
+      "Computer Vision"
+    ],
     "image": "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=800&q=80",
     "repoLink": "https://github.com/lucaspardede/agroscan-ai-detector",
     "demoLink": "https://lucaspardede.github.io/agroscan-ai-detector"
@@ -114,9 +178,18 @@
     "shortDescription": "Tool interaktif simulasi scanning kerentanan formulir web dari serangan SQL Injection, Cross-Site Scripting (XSS), dan sanitasi header HTTP untuk standar keamanan aplikasi web modern.",
     "description": "SecureAudit adalah tool edukasi dan simulasi pengujian celah keamanan aplikasi web untuk standar OWASP Top 10, difokuskan pada sanitasi input form dan analisis header HTTP. Menyajikan simulasi payload serangan injeksi serta rekomendasi perbaikan kode secara defensif.",
     "metrics": {
-      "item1": { "unit": "OWASP", "desc": "Standar Pengujian Teruji" },
-      "item2": { "unit": "100%", "desc": "Cakupan XSS & SQLi Sanitasi" },
-      "item3": { "unit": "A+", "desc": "Target Evaluasi Header CSP" }
+      "item1": {
+        "unit": "OWASP",
+        "desc": "Standar Pengujian Teruji"
+      },
+      "item2": {
+        "unit": "100%",
+        "desc": "Cakupan XSS & SQLi Sanitasi"
+      },
+      "item3": {
+        "unit": "A+",
+        "desc": "Target Evaluasi Header CSP"
+      }
     },
     "features": [
       "SQL Injection Vector Scanner: Deteksi karakter berbahaya dan bypass query pada parameter form input.",
@@ -124,7 +197,14 @@
       "HTTP Security Headers Checker: Verifikasi Content-Security-Policy, X-Frame-Options, dan HSTS.",
       "Laporan Remediasi Otomatis: Rekomendasi perbaikan kode berbasis prepared statements dan input validation."
     ],
-    "tags": ["Node.js", "Express", "OWASP Top 10", "Security Headers", "Cyber Security", "PenTesting"],
+    "tags": [
+      "Node.js",
+      "Express",
+      "OWASP Top 10",
+      "Security Headers",
+      "Cyber Security",
+      "PenTesting"
+    ],
     "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
     "repoLink": "https://github.com/lucaspardede/secureaudit-tester",
     "demoLink": "https://lucaspardede.github.io/secureaudit-tester"
@@ -140,9 +220,18 @@
     "shortDescription": "Transformasi arsitektur web portofolio dari monolitik statis menjadi decoupled multi-tier: dynamic CSR, REST form dispatching, universal dynamic modal, dan profil performa DevTools.",
     "description": "Refactoring arsitektural komprehensif pada aplikasi portofolio personal Lucas Pardede mematuhi modul PPW Week 4: memisahkan presentation tier, logic tier (api-service.js & app.js), data provider JSON modular, Universal Dynamic Modal Bootstrap 5, serta pengukuran performa jaringan RFC 9111.",
     "metrics": {
-      "item1": { "unit": "100%", "desc": "Decoupled Data Layer" },
-      "item2": { "unit": "1", "desc": "Universal Dynamic Modal" },
-      "item3": { "unit": "4 UI", "desc": "States (Loading/Success/Empty/Error)" }
+      "item1": {
+        "unit": "100%",
+        "desc": "Decoupled Data Layer"
+      },
+      "item2": {
+        "unit": "1",
+        "desc": "Universal Dynamic Modal"
+      },
+      "item3": {
+        "unit": "4 UI",
+        "desc": "States (Loading/Success/Empty/Error)"
+      }
     },
     "features": [
       "Dynamic Client-Side Rendering (CSR): Rendering kartu portofolio sepenuhnya via async/await dan JSON Provider.",
@@ -150,7 +239,14 @@
       "Decoupled Asynchronous REST Form: Submit form tanpa reload halaman, DTO JSON payload, dan umpan balik Bootstrap Toast.",
       "Persistent Local State: Riwayat pemesanan layanan tersimpan di localStorage dengan badge jumlah pesanan reaktif."
     ],
-    "tags": ["Bootstrap 5.3", "Dynamic CSR", "JSON Provider", "Fetch API", "localStorage", "DevTools Profiling"],
+    "tags": [
+      "Bootstrap 5.3",
+      "Dynamic CSR",
+      "JSON Provider",
+      "Fetch API",
+      "localStorage",
+      "DevTools Profiling"
+    ],
     "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
     "repoLink": "https://github.com/LucasPardede/ppw-2026-week2-12S24015",
     "demoLink": "https://lucaspardede.github.io/ppw-2026-week2-12S24015/"

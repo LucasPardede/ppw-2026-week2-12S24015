@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ==============================================================================
  * LUCAS PARDEDE - DATA ACCESS LAYER (js/api-service.js)
  * NIM: 12S24015 - Institut Teknologi Del - PPW Week 4

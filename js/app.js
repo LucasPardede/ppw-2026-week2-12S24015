@@ -1,8 +1,8 @@
 /**
  * ==============================================================================
- * LUCAS PARDEDE — PRESENTATION & LOGIC TIER (js/app.js)
- * NIM: 12S24015 · S1 Sistem Informasi · Institut Teknologi Del
- * Mata Kuliah: Pemrograman dan Pengujian Web (12S3101) — Week 4
+ * LUCAS PARDEDE - PRESENTATION & LOGIC TIER (js/app.js)
+ * NIM: 12S24015 * S1 Sistem Informasi * Institut Teknologi Del
+ * Mata Kuliah: Pemrograman dan Pengujian Web (12S3101) - Week 4
  * Arsitektur: Dynamic Client-Side Rendering (CSR), Universal Modal, REST Form,
  *             Persistent Local Storage State, & Defensive UI State Machine
  * ==============================================================================
@@ -169,7 +169,7 @@ class PortfolioApp {
             </div>
 
             <div class="card-body">
-              <h3 class="card-title">${this.escapeHTML(proj.title.split('—')[0].trim())}</h3>
+              <h3 class="card-title">${this.escapeHTML((proj.title || '').split(/\s*[-\u2013\u2014]\s*/)[0].trim())}</h3>
               <p class="card-text">${this.escapeHTML(proj.shortDescription || proj.description)}</p>
               
               <div class="tech-badge-container">
@@ -381,7 +381,7 @@ class PortfolioApp {
       titleEl.textContent = proj.title;
     }
     if (badgeCategoryEl) {
-      badgeCategoryEl.textContent = `${proj.category} · ${proj.year || '2026'}`;
+      badgeCategoryEl.textContent = `${proj.category} * ${proj.year || '2026'}`;
     }
 
     // 2. Render Metrics Boxes jika tersedia
@@ -476,7 +476,7 @@ class PortfolioApp {
         e.stopPropagation();
         serviceForm.classList.add('was-validated');
         this.showToastNotification(
-          'Form Belum Lengkap ⚠️',
+          'Form Belum Lengkap',
           'Silakan lengkapi seluruh kolom yang bertanda bintang (*) sesuai format yang diminta.'
         );
         return;
@@ -529,7 +529,7 @@ class PortfolioApp {
 
         // Feedback visual Bootstrap Toast
         this.showToastNotification(
-          'Permohonan Terkirim! ✅',
+          'Permohonan Terkirim!',
           `Pengajuan sesi "${enrichedPayload.layanan}" atas nama ${enrichedPayload.nama} berhasil diproses oleh REST API.`
         );
 
@@ -540,7 +540,7 @@ class PortfolioApp {
       } catch (err) {
         console.error('[Form Submit Asinkron Error]:', err);
         this.showToastNotification(
-          'Gagal Mengirim ⚠️',
+          'Gagal Mengirim Form',
           `Terjadi kesalahan saat memproses data ke API: ${err.message}. Silakan coba lagi.`
         );
       } finally {
@@ -869,6 +869,21 @@ class PortfolioApp {
     });
   }
 
+  renderAvatarIcon(avatar) {
+    switch (avatar) {
+      case 'dev':
+        return '<i class="bi bi-person-fill-gear text-info"></i>';
+      case 'academic':
+        return '<i class="bi bi-mortarboard-fill text-warning"></i>';
+      case 'rocket':
+        return '<i class="bi bi-rocket-takeoff-fill text-danger"></i>';
+      case 'star':
+        return '<i class="bi bi-star-fill text-warning"></i>';
+      default:
+        return '<i class="bi bi-person-circle text-primary"></i>';
+    }
+  }
+
   initGuestbook() {
     const commentsStream = document.getElementById('comments-stream');
     const commentForm = document.getElementById('comment-form');
@@ -878,30 +893,35 @@ class PortfolioApp {
       {
         id: 1,
         name: "Humasak Tommy Argo Simanjuntak, ST, M.ISD",
-        avatar: "👨‍🏫",
+        avatar: "academic",
         time: "18 Sep 2026, 14:20",
         text: "Portofolio yang sangat komprehensif dan mencerminkan kapabilitas mahasiswa Sistem Informasi IT Del. Dedikasi sebagai Asdos Basis Data & Matematika Diskrit serta keaktifan di BEM dan Pojok Statistik terlihat jelas. Terus pertahankan prestasi, Lucas!"
       },
       {
         id: 2,
         name: "Andi Siregar (13SI1 - IT Del)",
-        avatar: "👨‍💻",
+        avatar: "dev",
         time: "19 Sep 2026, 09:15",
-        text: "Keren kali bro web porto terbarunya! Mockup proyek DelEats dan sistem DelLib kelihatan professional banget. Sukses bareng sebagai asdos dan di semester 5 ini! 🔥"
+        text: "Keren kali bro web porto terbarunya! Mockup proyek DelEats dan sistem DelLib kelihatan professional banget. Sukses bareng sebagai asdos dan di semester 5 ini!"
       },
       {
         id: 3,
         name: "Dosen Pengampu Praktikum PPW (12S3101)",
-        avatar: "👩‍🎓",
+        avatar: "star",
         time: "20 Sep 2026, 08:30",
         text: "Implementasi semantik HTML5, tabel KHS, formulir interaktif aksesibel, dan integrasi WhatsApp telah memenuhi seluruh kriteria modul praktikum dengan sangat baik."
       }
     ];
 
+    const STORAGE_KEY = 'lucas_portfolio_comments_v4';
+
     const getStoredComments = () => {
       try {
-        const stored = localStorage.getItem('lucas_portfolio_comments_v2');
-        if (stored) return JSON.parse(stored);
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
       } catch (e) {
         console.warn('Akses penyimpanan lokal dibatasi', e);
       }
@@ -910,7 +930,7 @@ class PortfolioApp {
 
     const saveComments = (comments) => {
       try {
-        localStorage.setItem('lucas_portfolio_comments_v2', JSON.stringify(comments));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
       } catch (e) {
         console.warn('Gagal menyimpan ke localStorage', e);
       }
@@ -925,7 +945,7 @@ class PortfolioApp {
 
       commentsStream.innerHTML = comments.map(c => `
         <div class="comment-card">
-          <div class="c-avatar">${this.escapeHTML(c.avatar || '👨‍💻')}</div>
+          <div class="c-avatar">${this.renderAvatarIcon(c.avatar)}</div>
           <div class="c-body">
             <div class="c-top">
               <span class="c-author">${this.escapeHTML(c.name)}</span>
@@ -946,7 +966,7 @@ class PortfolioApp {
 
         const name = (nameInput?.value || '').trim();
         const text = (msgInput?.value || '').trim();
-        const avatar = selectedAvatar ? selectedAvatar.value : '👨‍💻';
+        const avatar = selectedAvatar ? selectedAvatar.value : 'dev';
 
         if (!name || !text) return;
 
@@ -965,7 +985,7 @@ class PortfolioApp {
 
         if (nameInput) nameInput.value = '';
         if (msgInput) msgInput.value = '';
-        this.showToastNotification('Komentar Terkirim! 💬', 'Terima kasih atas apresiasi Anda di buku tamu.');
+        this.showToastNotification('Komentar Terkirim!', 'Terima kasih atas apresiasi Anda di buku tamu.');
       });
     }
 
